@@ -1,0 +1,114 @@
+classname: tsdat.DefaultRetriever
+readers:
+  .*:
+    classname: pipelines.cdip.readers.CDIPDataRequest
+    parameters:
+      data_type: realtime
+
+coords:
+  time:
+    name: waveTime
+  frequency:
+    name: waveFrequency
+  sst_time:
+    name: sstTime
+  gps_time:
+    name: gpsTime
+  dwr_time:
+    name: dwrTime
+
+data_vars:
+  # meta_deploy_latitude:
+  #   name: metaDeployLatitude
+  # meta_deploy_longitude:
+  #   name: metaDeployLongitude
+  wave_flag_primary:
+    name: waveFlagPrimary
+  wave_flag_secondary:
+    name: waveFlagSecondary
+  wave_hs:
+    name: waveHs
+  wave_tp:
+    name: waveTp
+  wave_ta:
+    name: waveTa
+  wave_dp:
+    name: waveDp
+  wave_peak_psd:
+    name: wavePeakPSD
+  wave_tz:
+    name: waveTz
+  wave_source_index:
+    name: waveSourceIndex
+  frequency_flag_primary:
+    name: waveFrequencyFlagPrimary
+  frequency_flag_secondary:
+    name: waveFrequencyFlagSecondary
+  wave_bandwidth:
+    name: waveBandwidth
+  sst_flag_primary:
+    name: sstFlagPrimary
+  sst_flag_secondary:
+    name: sstFlagSecondary
+  sst:
+    name: sstSeaSurfaceTemperature
+  sst_source_index:
+    name: sstSourceIndex
+  sst_reference_temp:
+    name: sstReferenceTemp
+  gps_status_flags:
+    name: gpsStatusFlags
+  gps_latitude:
+    name: gpsLatitude
+  gps_longitude:
+    name: gpsLongitude
+  gps_source_index:
+    name: gpsSourceIndex
+  dwr_source_index:
+    name: dwrSourceIndex
+  dwr_battery_level:
+    name: dwrBatteryLevel
+  dwr_z_accelerometer_offset:
+    name: dwrZAccelerometerOffset
+  dwr_x_accelerometer_offset:
+    name: dwrXAccelerometerOffset
+  dwr_y_accelerometer_offset:
+    name: dwrYAccelerometerOffset
+  dwr_orientation:
+    name: dwrOrientation
+  dwr_inclination:
+    name: dwrInclination
+  dwr_battery_weeks_of_life:
+    name: dwrBatteryWeeksOfLife
+  meta_station_name:
+    name: metaStationName
+  meta_platform:
+    name: metaPlatform
+  meta_instrumentation:
+    name: metaInstrumentation
+  meta_water_depth:
+    name: metaWaterDepth
+  meta_declination:
+    name: metaDeclination
+  meta_grid_mapping:
+    name: metaGridMapping
+  wave_energy_density:
+    name: waveEnergyDensity
+  wave_mean_direction:
+    name: waveMeanDirection
+  wave_a1_value:
+    name: waveA1Value
+  wave_b1_value:
+    name: waveB1Value
+  wave_a2_value:
+    name: waveA2Value
+  wave_b2_value:
+    name: waveB2Value
+  wave_check_factor:
+    name: waveCheckFactor
+  wave_spread:
+    name: waveSpread
+  wave_m2_value:
+    name: waveM2Value
+  wave_n2_value:
+    name: waveN2Value

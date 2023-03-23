@@ -1,0 +1,17 @@
+classname: pipelines.cdip.pipeline.CDIPWaveBuoy
+
+triggers:
+  - /^([0-9]){3}$/
+
+retriever:
+  path: pipelines/cdip/config/retriever.yaml
+  overrides:
+    /readers/.*/parameters/data_type: historic
+
+dataset:
+  path: pipelines/cdip/config/dataset.yaml
+
+quality:
+  path: pipelines/cdip/config/quality.yaml
+storage:
+  path: shared/storage.yaml
