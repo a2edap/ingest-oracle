@@ -16,9 +16,17 @@ class CDIPWaveBuoy(IngestPipeline):
     def hook_customize_dataset(self, dataset: xr.Dataset) -> xr.Dataset:
         # (Optional) Use this hook to modify the dataset before qc is applied
 
-        # Rename description to summary for CF compliance
-        dataset.attrs["summary"] = dataset.attrs.pop("description")
-        dataset.attrs["dataset_name"] = dataset.attrs["cdip_station_id"]
+        # Reset dataset title to original
+        dataset.attrs["title"] = dataset.attrs.pop("cdip_title")
+        # Drop tsdat's "description" attribute ("summary" exists)
+        dataset.attrs.pop("description")
+        # Set station name
+        if hasattr(dataset, "cdip_station_id"):
+            dataset.attrs["dataset_name"] = dataset.attrs["cdip_station_id"]
+        elif hasattr(dataset, "id"):
+            dataset.attrs["dataset_name"] = dataset.attrs["id"][5:8]
+            dataset.attrs["cdip_station_id"] = dataset.attrs["id"][5:8]
+        # Reset datastream
         dataset.attrs["datastream"] = dataset.attrs["datastream"].replace(
             "000", dataset.attrs["cdip_station_id"]
         )
@@ -43,7 +51,7 @@ class CDIPWaveBuoy(IngestPipeline):
 
         with self.storage.uploadable_dir(datastream) as tmp_dir:
 
-            fig, axs = plt.subplots(nrows=4)
+            fig, axs = plt.subplots(nrows=3)
 
             # Plot Wave Heights
             c2 = amp_r(0.50)
@@ -64,12 +72,12 @@ class CDIPWaveBuoy(IngestPipeline):
             axs[2].legend(bbox_to_anchor=(1, -0.10), ncol=2)
             axs[2].set_ylabel("Wave Direction (deg)")
 
-            c1 = haline(0.9)
-            ds["sst"].plot(ax=axs[3], c=c1, label=r"Sea Surface$")
-            axs[3].legend(bbox_to_anchor=(1, -0.10), ncol=2)
-            axs[3].set_ylabel("Temperature (deg C)")
+            # c1 = haline(0.9)
+            # ds["sst"].plot(ax=axs[3], c=c1, label=r"Sea Surface$")
+            # axs[3].legend(bbox_to_anchor=(1, -0.10), ncol=2)
+            # axs[3].set_ylabel("Temperature (deg C)")
 
-            for i in range(4):
+            for i in range(len(axs)):
                 axs[i].set_xlabel("Time (UTC)")
 
             plot_file = get_filename(ds, title="wave_data_plots", extension="png")

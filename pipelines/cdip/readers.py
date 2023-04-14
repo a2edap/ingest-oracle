@@ -52,5 +52,6 @@ class CDIPDataRequest(DataReader):
         # input_key is the station id #
         nc = request_netCDF(input_key, data_type=self.parameters.data_type)
         ds = clean_netcdf(nc)
+        ds.attrs["cdip_title"] = ds.attrs["title"]  # reset in pipeline hook
 
         return ds

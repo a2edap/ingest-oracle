@@ -1,85 +1,14 @@
 attrs:
-  naming_authority: edu.ucsd.cdip
-  keywords_vocabulary: Global Change Master Directory (GCMD) Earth Science Keywords
-  date_created: "2023-03-13T23:02:02Z"
-  date_issued: "2023-03-13T23:02:02Z"
-  date_modified: "2023-03-13T23:02:02Z"
-  creator_name: Coastal Data Information Program, SIO/UCSD
-  creator_url: http://cdip.ucsd.edu
-  creator_email: www@cdip.ucsd.edu
-  publisher_name: Coastal Data Information Program, SIO/UCSD
-  publisher_url: http://cdip.ucsd.edu
-  publisher_email: www@cdip.ucsd.edu
-  institution: Scripps Institution of Oceanography, University of California San Diego
-  project: Coastal Data Information Program (CDIP)
-  processing_level: QA/QC information available at http://cdip.ucsd.edu/documentation
-  standard_name_vocabulary: CF Standard Name Table (v29, 08 July 2015)
-  Conventions: ACDD-1.3, CF-1.6
-  license: These data may be redistributed and used without restriction.
-  cdm_data_type: Station
-  featureType: timeSeries
-  ncei_template_version: NCEI_NetCDF_TimeSeries_Orthogonal_Template_v2.0
-  references: http://cdip.ucsd.edu/documentation
-  uuid: 5A408347-D09C-4DD3-9E28-CF9515B4FF9B
   title:
     Directional wave and sea surface temperature measurements collected in situ by
-    Datawell DWR-M3 directional buoy located near SCRIPPS NEARSHORE, CA from 2021/11/10
-    21:00:00 to 2023/03/13 22:56:40.
-  description: >-
+    Datawell DWR-M3 directional buoy.
+  description:
     Directional wave and sea surface temperature measurements collected in situ by
-    Datawell DWR-M3 directional buoy located near SCRIPPS NEARSHORE, CA from 2021/11/10
-    21:00:00 to 2023/03/13 22:56:40. A total of 23420 wave samples were analyzed for
-    this site, where the water depth is approximately 46 meters.
-  keywords:
-    EARTH SCIENCE, OCEANS, OCEAN WAVES, GRAVITY WAVES, WIND WAVES, SIGNIFICANT WAVE
-    HEIGHT, WAVE FREQUENCY, WAVE PERIOD, WAVE SPECTRA, OCEAN TEMPERATURE, SEA SURFACE
-    TEMPERATURE, WATER TEMPERATURE, OCEAN, PACIFIC OCEAN, EASTERN PACIFIC OCEAN
-  cdip_station_id: "201"
-  wmo_id: "46254"
-  id: CDIP_201p1_20211110-20230313
-  history:
-    "2023-03-13T23:02:04Z: dataset created; multiple updates - last run program,
-    arguments: process_dw_realtime v2.1, is70387_202303132300 If date_modified is after
-    date_created, contact CDIP for details of changes."
-  comment:
-    This dataset contains data as acquired in real-time, the QC performed upon it is not
-    as complete as for historic CDIP datasets. All values are decoded directly from the
-    instruments in accordance with the manufacturers documentation EXCEPT for those with
-    the attribute :additional_processing which describes further data handling performed
-    by CDIP.
-  acknowledgment:
-    "CDIP is primarily supported by the U.S. Army Corps of Engineers (USACE). Station
-    partner: CORDC ; Field operator: CDIP"
-  metadata_link: http://cdip.ucsd.edu/metadata/201p1
-  contributor_name: CDIP, CORDC/USACE
-  contributor_role: station operation, station funding
-  geospatial_lat_min: 32.86659240722656
-  geospatial_lat_max: 32.869407653808594
-  geospatial_lat_units: deg_north
-  geospatial_lat_resolution: 9.999999747378752e-05
-  geospatial_lon_min: -117.26828002929688
-  geospatial_lon_max: -117.26492309570312
-  geospatial_lon_units: deg_east
-  geospatial_lon_resolution: 9.999999747378752e-05
-  geospatial_vertical_min: 0.0
-  geospatial_vertical_max: 0.0
-  geospatial_vertical_units: meters
-  geospatial_vertical_origin: sea surface
-  geospatial_vertical_positive: up
-  geospatial_vertical_resolution: 1.0
-  time_coverage_start: "2021-11-10T21:00:00Z"
-  time_coverage_end: "2023-03-13T22:56:40Z"
-  time_coverage_duration: P488DT01H57M
-  time_coverage_resolution: PT30M
-  source: insitu observations
-  platform: metaPlatform
-  instrument: metaInstrumentation
-  DODS.strlen: 0
-  DODS.dimName: metaStationNameLength
-
+    Datawell DWR-M3 directional buoy
   location_id: cdip
   dataset_name: "000" # Updated in pipeline hook
   data_level: c1
+  # Other attributes migrated from original file
 
 coords:
   time:
@@ -510,59 +439,59 @@ data_vars:
     attrs:
       long_name: battery weeks of life
       units: weeks
-  meta_station_name:
-    dims: []
-    dtype: "|S64"
-    attrs:
-      units: "1"
-      long_name: station name
-      standard_name: platform_id
-      cf_role: timeseries_id
-  meta_platform:
-    dims: []
-    dtype: "|S64"
-    attrs:
-      units: "1"
-      long_name: platform_attributes
-      make_model: Datawell DWR-M3 directional buoy
-      serial_number: "Hull: 30399; hatchcover: 70387"
-      documentation_url: http://datawell.nl
-      mooring: Datawell-compliant
-      mooring_length_meters: 73.0
-  meta_instrumentation:
-    dims: []
-    dtype: "|S64"
-    attrs:
-      units: "1"
-      long_name: instrumentation_attributes
-      make_model: Datawell DWR-M3 directional buoy
-      serial_number: "Hull: 30399; hatchcover: 70387"
-      documentation_url: http://datawell.nl
-      mooring: Datawell-compliant
-      mooring_length_meters: 73.0
-  meta_water_depth:
-    dims: []
-    dtype: float32
-    attrs:
-      standard_name: sea_floor_depth_below_sea_surface
-      long_name: water depth
-      units: m
-      ncei_name: DEPTH - BOTTOM
-  meta_declination:
-    dims: []
-    dtype: float32
-    attrs:
-      long_name: magnetic declination
-      units: deg
-  meta_grid_mapping:
-    dims: []
-    dtype: "|S64"
-    attrs:
-      units: "1"
-      grid_mapping_name: latitude_longitude
-      longitude_of_prime_meridian: 0.0
-      semi_major_axis: 6378137.0
-      inverse_flattening: 298.257223563
+  # meta_station_name:
+  #   dims: []
+  #   dtype: "|S64"
+  #   attrs:
+  #     units: "1"
+  #     long_name: station name
+  #     standard_name: platform_id
+  #     cf_role: timeseries_id
+  # meta_platform:
+  #   dims: []
+  #   dtype: "|S64"
+  #   attrs:
+  #     units: "1"
+  #     long_name: platform_attributes
+  #     make_model: Datawell DWR-M3 directional buoy
+  #     serial_number: "Hull: 30399; hatchcover: 70387"
+  #     documentation_url: http://datawell.nl
+  #     mooring: Datawell-compliant
+  #     mooring_length_meters: 73.0
+  # meta_instrumentation:
+  #   dims: []
+  #   dtype: "|S64"
+  #   attrs:
+  #     units: "1"
+  #     long_name: instrumentation_attributes
+  #     make_model: Datawell DWR-M3 directional buoy
+  #     serial_number: "Hull: 30399; hatchcover: 70387"
+  #     documentation_url: http://datawell.nl
+  #     mooring: Datawell-compliant
+  #     mooring_length_meters: 73.0
+  # meta_water_depth:
+  #   dims: []
+  #   dtype: float32
+  #   attrs:
+  #     standard_name: sea_floor_depth_below_sea_surface
+  #     long_name: water depth
+  #     units: m
+  #     ncei_name: DEPTH - BOTTOM
+  # meta_declination:
+  #   dims: []
+  #   dtype: float32
+  #   attrs:
+  #     long_name: magnetic declination
+  #     units: deg
+  # meta_grid_mapping:
+  #   dims: []
+  #   dtype: "|S64"
+  #   attrs:
+  #     units: "1"
+  #     grid_mapping_name: latitude_longitude
+  #     longitude_of_prime_meridian: 0.0
+  #     semi_major_axis: 6378137.0
+  #     inverse_flattening: 298.257223563
   wave_energy_density:
     dims: [time, frequency]
     dtype: float32

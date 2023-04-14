@@ -80,18 +80,18 @@ data_vars:
     name: dwrInclination
   dwr_battery_weeks_of_life:
     name: dwrBatteryWeeksOfLife
-  meta_station_name:
-    name: metaStationName
-  meta_platform:
-    name: metaPlatform
-  meta_instrumentation:
-    name: metaInstrumentation
-  meta_water_depth:
-    name: metaWaterDepth
-  meta_declination:
-    name: metaDeclination
-  meta_grid_mapping:
-    name: metaGridMapping
+  # meta_station_name:
+  #   name: metaStationName
+  # meta_platform:
+  #   name: metaPlatform
+  # meta_instrumentation:
+  #   name: metaInstrumentation
+  # meta_water_depth:
+  #   name: metaWaterDepth
+  # meta_declination:
+  #   name: metaDeclination
+  # meta_grid_mapping:
+  #   name: metaGridMapping
   wave_energy_density:
     name: waveEnergyDensity
   wave_mean_direction:
