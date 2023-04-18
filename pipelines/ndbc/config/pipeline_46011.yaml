@@ -1,0 +1,15 @@
+classname: pipelines.ndbc.pipeline.Ndbc
+
+triggers:
+  - .*46011.*.txt
+
+retriever:
+  path: pipelines/ndbc/config/retriever.yaml
+
+dataset:
+  path: pipelines/ndbc/config/dataset_46011.yaml
+
+quality:
+  path: shared/quality.yaml
+storage:
+  path: shared/storage.yaml
