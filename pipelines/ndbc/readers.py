@@ -30,7 +30,7 @@ class CustomDataReader(DataReader):
 
         """
 
-        missing_values = ["MM", 9999, 999, 99]
+    missing_values = ["MM", 9999, 999, 99]
 
     parameters: Parameters = Parameters()
     """Extra parameters that can be set via the retrieval configuration file. If you opt
