@@ -1,0 +1,26 @@
+classname: pipelines.ndbc.pipeline.Ndbc
+
+triggers:
+  - .*46014.*.txt
+
+retriever:
+  path: pipelines/ndbc/config/retriever.yaml
+
+dataset:
+  path: pipelines/ndbc/config/dataset.yaml
+  overrides:
+    /attrs/dataset_name: buoy_46014
+    /data_vars/latitude/data: 39.231
+    /data_vars/longitude/data: -123.974
+    /data_vars/site_elevation/data: 0
+    /data_vars/air_temp_height/data: 3.4
+    /data_vars/anemometer_height/data: 3.8
+    /data_vars/barometer_elevation/data: 2.4
+    /data_vars/sea_temp_depth/data: 2
+    /data_vars/water_depth/data: 356
+    /data_vars/watch_circle_radius/data: 514
+
+quality:
+  path: shared/quality.yaml
+storage:
+  path: shared/storage.yaml
