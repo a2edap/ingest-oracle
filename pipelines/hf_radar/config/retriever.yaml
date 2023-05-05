@@ -1,0 +1,26 @@
+classname: tsdat.io.retrievers.DefaultRetriever
+readers:
+  .*:
+    classname: pipelines.hf_radar.readers.FetchHFRadarData
+    parameters:
+      resolution: 6km
+      start: 2012-01-01
+      end: 2012-02-01
+
+coords:
+  time_run:
+    name: time_run
+  time:
+    name: time
+  lat:
+    name: lat
+  lon:
+    name: lon
+
+data_vars:
+  u:
+    name: u
+  wgs84:
+    name: wgs84
+  v:
+    name: v

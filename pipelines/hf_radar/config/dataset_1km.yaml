@@ -1,0 +1,122 @@
+## Not used, for reference
+attrs:
+  Conventions: CF-1.4, ACDD-1.3
+  id: 202305050200siohfruwlsrtvuswc1km
+  date_created: "2023-05-05T04:18:34Z"
+  source: surface ocean velocity field from hf-radar
+  program: Integrated Ocean Observing System (IOOS)
+  title: Near-Real Time Surface Ocean Velocity, U.S. West Coast, 1km Resolution
+  summary: "Surface ocean velocities estimated from HF-Radar are representative \n\
+    of the upper 0.5 meters of the ocean.  The main objective of \nnear-real time\
+    \ processing is to produce the best product from \navailable data at the time\
+    \ of processing.  Radial velocity \nmeasurements are obtained from individual\
+    \ radar sites through the \nU.S. HF-Radar Network. Hourly radial data are processed\
+    \ by unweighted \nleast squares on a 1km resolution grid of the U.S. West Coast\
+    \ to \nproduce near real-time surface current maps."
+  instrument: "Earth Remote Sensing Instruments, Active Remote Sensing,
+    \nProfilers/Sounders,\
+    \ Radar Sounders, Doppler RADAR"
+  keywords: "Earth Science, Oceans, Coastal Processes, Marine Environment \nMonitoring,\
+    \ Ocean Circulation, Ocean Currents, Surface Currents, \nWind-Driven Circulation,\
+    \ Tides, Tidal Currents, Pacific Ocean, North \nPacific Ocean"
+  geospatial_lat_min: 32.497501373291016
+  geospatial_lat_max: 38.99726867675781
+  geospatial_lon_min: -124.9983901977539
+  geospatial_lon_max: -117.00281524658203
+  processing_level: "Near real-time dataset with automated data acquisition and
+    processing\
+    \ \nquality control"
+  history: "2023-05-05T03:18:55Z hfrnet rtvMergeData: Saving 11499 new solutions\n\
+    2023-05-05T03:48:28Z hfrnet rtvMergeData: Saving 12843 solutions; \n1390 new or\
+    \ updated, 11453 unmodified from previous run(s)\n2023-05-05T04:18:33Z hfrnet\
+    \ rtvMergeData: Saving 14009 solutions; \n2230 new or updated, 11779 unmodified\
+    \ from previous run(s)\n2023-05-05T04:18:34Z hfrnet rtvSaveNetcdf: Removed 5796\
+    \ solutions \nexceeding HDOP threshold of 1.25 ;\nFMRC Best Dataset"
+  references: "Terrill, E. et al., 2006. Data Management and Real-time Distribution\
+    \ \nin the HF-Radar National Network. Proceedings of the MTS/IEEE Oceans \n2006\
+    \ Conference, Boston MA, September 2006."
+  institution:
+    Coastal Observing Research and Development Center, Scripps Institution of
+    Oceanography
+  creator_type: group
+  creator_name: HFRNet Administrators
+  creator_email: hfrnet.administrators@sio.ucsd.edu
+  creator_url: http://cordc.ucsd.edu/projects/mapping/
+  naming_authority: edu.ucsd.cordc
+  standard_name_vocabulary: CF Standard Name Table, Version 51
+  keywords_vocabulary: Global Change Master Directory (GCMD) Keywords, Version 14.1
+  instrument_vocabulary: Global Change Master Directory (GCMD) Keywords, Version 8.6
+  format_version: 1.1.00
+  product_version: 2.0.00
+  cdm_data_type: GRID
+  featureType: GRID
+  location: Proto fmrc:HFRADAR_US_West_Coast_1km_Resolution_Hourly_RTV
+  History: "Translated to CF-1.0 Conventions by Netcdf-Java CDM (CFGridWriter2)\n\
+    Original Dataset = fmrc:HFRADAR_US_West_Coast_1km_Resolution_Hourly_RTV;
+    Translation\
+    \ Date = 2023-05-05T21:17:16.201Z"
+
+  description: High frequency radar measurements of surface currents in southern CA.
+  location_id: sccoos
+  dataset_name: hf_radar
+  data_level: b1
+
+coords:
+  time_run:
+    dims: [time]
+    dtype: datetime64[ns]
+    attrs:
+      long_name: run times for coordinate = time
+      standard_name: forecast_reference_time
+      _CoordinateAxisType: RunTime
+  time:
+    dims: [time]
+    dtype: datetime64[s]
+    attrs:
+      units: Seconds since 1970-01-01 00:00:00
+  lat:
+    dims: [lat]
+    dtype: float32
+    attrs:
+      units: degrees_north
+      long_name: latitude
+      standard_name: latitude
+      _CoordinateAxisType: Lat
+  lon:
+    dims: [lon]
+    dtype: float32
+    attrs:
+      units: degrees_east
+      long_name: longitude
+      standard_name: longitude
+      _CoordinateAxisType: Lon
+
+data_vars:
+  u:
+    dims: [time, lat, lon]
+    dtype: float32
+    attrs:
+      units: m s-1
+      long_name: surface_eastward_sea_water_velocity
+      standard_name: surface_eastward_sea_water_velocity
+      grid_mapping: wgs84
+      cell_methods: "depth: mean time: mean"
+  wgs84:
+    dims: []
+    dtype: int8
+    attrs:
+      grid_mapping_name: latitude_longitude
+      longitude_of_prime_meridian: 0.0
+      semi_major_axis: 6378137.0
+      inverse_flattening: 298.257223563
+      _CoordinateTransformType: Projection
+      _CoordinateAxisTypes: GeoX GeoY
+  v:
+    dims: [time, lat, lon]
+    dtype: float32
+    attrs:
+      units: m s-1
+      long_name: surface_northward_sea_water_velocity
+      standard_name: surface_northward_sea_water_velocity
+      grid_mapping: wgs84
+      cell_methods: "depth: mean time: mean"
