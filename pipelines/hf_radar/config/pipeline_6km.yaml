@@ -5,8 +5,6 @@ triggers:
 
 retriever:
   path: pipelines/hf_radar/config/retriever.yaml
-  overrides:
-    /readers/.*/parameters/resolution: 6km
 
 dataset:
   path: pipelines/hf_radar/config/dataset.yaml

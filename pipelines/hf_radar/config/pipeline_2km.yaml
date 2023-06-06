@@ -10,6 +10,8 @@ retriever:
 
 dataset:
   path: pipelines/hf_radar/config/dataset.yaml
+  overrides:
+    /attrs/qualifier: 2km
 
 quality:
   path: shared/quality.yaml
