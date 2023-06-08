@@ -1,7 +1,7 @@
 from typing import Dict, Union
 from pydantic import BaseModel, Extra
+import numpy as np
 import xarray as xr
-import netCDF4
 import requests
 from tsdat import DataReader
 
@@ -16,8 +16,6 @@ class FetchHFRadarData(DataReader):
         retriever configuration file, then those should be specified here.
         """
 
-        start_date: str = "2012-01-01"
-        end_date: str = "2012-02-01"
         resolution: str = "6km"  # 1km, 2km, or 6km
 
     parameters: Parameters = Parameters()
@@ -37,8 +35,10 @@ class FetchHFRadarData(DataReader):
         ----------------------------------------------------------------------------"""
 
         res = self.parameters.resolution
-        start = self.parameters.start_date
-        end = self.parameters.end_date
+
+        start = input_key + "-01"
+        end_date = np.datetime64(input_key) + np.timedelta64(1, "M")
+        end = str(end_date) + "-01"
 
         data_url = f"https://hfrnet-tds.ucsd.edu/thredds/ncss/HFR/USWC/{res}/hourly/RTV/HFRADAR_US_West_Coast_{res}_Resolution_Hourly_RTV_best.ncd?var=u&var=v&north=47.0&west=-127.0&east=-117.0&south=32.0&disableProjSubset=on&horizStride=1&time_start={start}T00%3A00%3A00Z&time_end={end}T18%3A00%3A00Z&timeStride=1&addLatLon=true&accept=netcdf4"
         fname = f"data_{res}.nc"

@@ -1,7 +1,7 @@
 classname: pipelines.hf_radar.pipeline.SCCOOS_HFRadar
 
 triggers:
-  - /^([0-9]){1}$/km
+  - \b[0-9]{4}-[0-9]{2}\b
 
 retriever:
   path: pipelines/hf_radar/config/retriever.yaml

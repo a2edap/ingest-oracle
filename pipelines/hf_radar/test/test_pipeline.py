@@ -8,7 +8,7 @@ def test_hf_radar_6km_pipeline():
     config = PipelineConfig.from_yaml(config_path)
     pipeline = config.instantiate_pipeline()
 
-    test_file = "20120101"
+    test_file = "2012-01"
     expected_file = "pipelines/hf_radar/test/data/expected/sccoos.hf_radar-6km.b1.20120101.000000.nc"
 
     dataset = pipeline.run([test_file])
@@ -21,7 +21,7 @@ def test_hf_radar_2km_pipeline():
     config = PipelineConfig.from_yaml(config_path)
     pipeline = config.instantiate_pipeline()
 
-    test_file = "20120101"
+    test_file = "2012-01"
     expected_file = "pipelines/hf_radar/test/data/expected/sccoos.hf_radar-2km.b1.20120101.000000.nc"
 
     dataset = pipeline.run([test_file])
