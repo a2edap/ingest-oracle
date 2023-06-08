@@ -15,7 +15,7 @@ coords:
     dims: [time]
     dtype: datetime64[ns]
     attrs:
-      units: seconds since 1970-01-01 00:00:00
+      units: Seconds since 1970-01-01 00:00:00
       long_name: UTC sample start time
       standard_name: time
       axis: T
@@ -35,7 +35,7 @@ coords:
     dims: [sst_time]
     dtype: datetime64[ns]
     attrs:
-      units: seconds since 1970-01-01 00:00:00
+      units: Seconds since 1970-01-01 00:00:00
       long_name: UTC sample time
       standard_name: time
       axis: T
@@ -44,7 +44,7 @@ coords:
     dims: [gps_time]
     dtype: datetime64[ns]
     attrs:
-      units: seconds since 1970-01-01 00:00:00
+      units: Seconds since 1970-01-01 00:00:00
       long_name: UTC sample time
       standard_name: time
       axis: T
@@ -53,7 +53,7 @@ coords:
     dims: [dwr_time]
     dtype: datetime64[ns]
     attrs:
-      units: seconds since 1970-01-01 00:00:00
+      units: Seconds since 1970-01-01 00:00:00
       long_name: UTC sample time
       standard_name: time
       axis: T
