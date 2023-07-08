@@ -35,6 +35,7 @@ managers:
           meaning: "Value is equal to _FillValue or NaN"
     apply_to:
       - DATA_VARS
+    exclude: [latitude, longitude, site_elevation, air_temp_height, anemometer_height, barometer_elevation, sea_temp_depth, water_depth, watch_circle_radius]
 
   - name: Flag data below minimum valid threshold
     checker:
@@ -47,6 +48,7 @@ managers:
           meaning: "Value is less than the valid_min."
     apply_to:
       - DATA_VARS
+    exclude: [latitude, longitude, site_elevation, air_temp_height, anemometer_height, barometer_elevation, sea_temp_depth, water_depth, watch_circle_radius]
 
   - name: Flag data above maximum valid threshold
     checker:
@@ -59,3 +61,4 @@ managers:
           meaning: "Value is greater than the valid_max."
     apply_to:
       - DATA_VARS
+    exclude: [latitude, longitude, site_elevation, air_temp_height, anemometer_height, barometer_elevation, sea_temp_depth, water_depth, watch_circle_radius]

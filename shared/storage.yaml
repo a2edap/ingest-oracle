@@ -1,3 +1,6 @@
 classname: tsdat.io.storage.FileSystem
 handler:
   classname: tsdat.io.handlers.NetCDFHandler
+  parameters:
+    to_netcdf_kwargs:
+      unlimited_dims: time
