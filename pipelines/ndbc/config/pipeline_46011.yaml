@@ -4,7 +4,7 @@ triggers:
   - .*46011.*.txt
 
 retriever:
-  path: /home/ocoleman/ingest-oracle/pipelines/ndbc/config/retriever.yaml
+  path: pipelines/ndbc/config/retriever.yaml
 
 dataset:
   path: pipelines/ndbc/config/dataset.yaml
