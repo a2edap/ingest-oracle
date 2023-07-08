@@ -9,7 +9,7 @@ retriever:
 dataset:
   path: pipelines/ndbc/config/dataset.yaml
   overrides:
-    /attrs/dataset_name: buoy_46013
+    /attrs/location_id: 46013
     /data_vars/latitude/data: 38.235
     /data_vars/longitude/data: -123.317
     /data_vars/site_elevation/data: 0
@@ -18,7 +18,7 @@ dataset:
     /data_vars/barometer_elevation/data: 2.4
     /data_vars/sea_temp_depth/data: 2
     /data_vars/water_depth/data: 127
-    /data_vars/watch_circle_radius/data: 167
+    /data_vars/watch_circle_radius/data: 152.705
 
 quality:
   path: shared/quality.yaml
