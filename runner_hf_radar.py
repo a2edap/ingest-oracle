@@ -1,5 +1,4 @@
 import numpy as np
-import pandas as pd
 from utils.registry import PipelineRegistry
 
 # List of months

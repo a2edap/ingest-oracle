@@ -193,7 +193,7 @@ data_vars:
     dtype: float32
     attrs:
       long_name: peak wave direction
-      units: deg_true
+      units: degree_true
       standard_name: sea_surface_wave_from_direction
       grid_mapping: metaGridMapping
       valid_min: 0.0
@@ -510,7 +510,7 @@ data_vars:
     dtype: float32
     attrs:
       long_name: band mean direction
-      units: deg_true
+      units: degree_true
       standard_name: sea_surface_wave_from_direction
       grid_mapping: metaGridMapping
       valid_min: 0.0
