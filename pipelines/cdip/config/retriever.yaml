@@ -56,19 +56,7 @@ data_vars:
     name: waveEnergyDensity
   wave_mean_direction:
     name: waveMeanDirection
-  wave_a1_value:
-    name: waveA1Value
-  wave_b1_value:
-    name: waveB1Value
-  wave_a2_value:
-    name: waveA2Value
-  wave_b2_value:
-    name: waveB2Value
   wave_check_factor:
     name: waveCheckFactor
   wave_spread:
     name: waveSpread
-  wave_m2_value:
-    name: waveM2Value
-  wave_n2_value:
-    name: waveN2Value

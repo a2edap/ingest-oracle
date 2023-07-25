@@ -44,8 +44,14 @@ class CDIPDataRequest(DataReader):
             # map all the time coordinates to a single time (waveTime) - skip for later
             time_vars = [v for v in ds.coords if "time" in v.lower()]
             time_vars.remove("waveTime")
+            # Drop unecessary coordinates to speed up pipeline
+            time_vars_to_keep = ["sstTime", "gpsTime", "dwrTime", "waveTime"]
+
             for tm in time_vars:
-                ds = unique_time(ds, tm)
+                if tm not in time_vars_to_keep:
+                    ds = ds.drop_dims(tm)
+                else:
+                    ds = unique_time(ds, tm)
 
             return ds
 

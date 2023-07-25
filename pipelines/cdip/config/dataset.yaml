@@ -370,70 +370,6 @@ data_vars:
       additional_processing:
         Magnetic declination (metaDeclination) added to buoy-returned direction to shift
         to degrees true.
-  wave_a1_value:
-    dims: [time, frequency]
-    dtype: float32
-    attrs:
-      units: "1"
-      long_name: band a1 Fourier coefficient
-      grid_mapping: metaGridMapping
-      valid_min: -1.0
-      valid_max: 1.0
-      ancillary_variables:
-        wave_flag_primary frequency_flag_primary wave_flag_secondary
-        frequency_flag_secondary
-      ncei_name: WAVE DATA - ANGULAR FOURIER COEFFICIENTS
-      additional_processing:
-        Calculated relative to true north from the buoy-returned mean dir, spread, m2,
-        and n2.
-  wave_b1_value:
-    dims: [time, frequency]
-    dtype: float32
-    attrs:
-      units: "1"
-      long_name: band b1 Fourier coefficient
-      grid_mapping: metaGridMapping
-      valid_min: -1.0
-      valid_max: 1.0
-      ancillary_variables:
-        wave_flag_primary frequency_flag_primary wave_flag_secondary
-        frequency_flag_secondary
-      ncei_name: WAVE DATA - ANGULAR FOURIER COEFFICIENTS
-      additional_processing:
-        Calculated relative to true north from the buoy-returned mean dir, spread, m2,
-        and n2.
-  wave_a2_value:
-    dims: [time, frequency]
-    dtype: float32
-    attrs:
-      units: "1"
-      long_name: band a2 Fourier coefficient
-      grid_mapping: metaGridMapping
-      valid_min: -1.0
-      valid_max: 1.0
-      ancillary_variables:
-        wave_flag_primary frequency_flag_primary wave_flag_secondary
-        frequency_flag_secondary
-      ncei_name: WAVE DATA - ANGULAR FOURIER COEFFICIENTS
-      additional_processing:
-        Calculated relative to true north from the buoy-returned mean dir, spread, m2,
-        and n2.
-  wave_b2_value:
-    dims: [time, frequency]
-    dtype: float32
-    attrs:
-      units: "1"
-      long_name: band b2 Fourier coefficient
-      grid_mapping: metaGridMapping
-      valid_min: -1.0
-      valid_max: 1.0
-      ancillary_variables:
-        wave_flag_primary frequency_flag_primary wave_flag_secondary
-        frequency_flag_secondary
-      ncei_name: WAVE DATA - ANGULAR FOURIER COEFFICIENTS
-      additional_processing:
-        Calculated relative to true north from the buoy-returned mean dir, spread, m2,
-        and n2.
   wave_check_factor:
     dims: [time, frequency]
     dtype: float32
@@ -455,30 +391,6 @@ data_vars:
       grid_mapping: metaGridMapping
       valid_min: 0.0
       valid_max: 90.0
-      ancillary_variables:
-        wave_flag_primary frequency_flag_primary wave_flag_secondary
-        frequency_flag_secondary
-  wave_m2_value:
-    dims: [time, frequency]
-    dtype: float32
-    attrs:
-      units: "1"
-      long_name: band centered sine Fourier coefficient
-      grid_mapping: metaGridMapping
-      valid_min: -1.0
-      valid_max: 1.0
-      ancillary_variables:
-        wave_flag_primary frequency_flag_primary wave_flag_secondary
-        frequency_flag_secondary
-  wave_n2_value:
-    dims: [time, frequency]
-    dtype: float32
-    attrs:
-      units: "1"
-      long_name: band centered cosine Fourier coefficient
-      grid_mapping: metaGridMapping
-      valid_min: -1.0
-      valid_max: 1.0
       ancillary_variables:
         wave_flag_primary frequency_flag_primary wave_flag_secondary
         frequency_flag_secondary
