@@ -37,9 +37,6 @@ class CDIPDataRequest(DataReader):
         def clean_netcdf(nc):
             ds = xr.open_dataset(xr.backends.NetCDF4DataStore(nc))
 
-            excess_dims = ["sourceCount", "metaBoundsCount"]
-            ds = ds.drop_dims(excess_dims)
-
             # Check for duplicate timestamps
             # map all the time coordinates to a single time (waveTime) - skip for later
             time_vars = [v for v in ds.coords if "time" in v.lower()]

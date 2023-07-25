@@ -62,7 +62,7 @@ coords:
 data_vars:
   wave_flag_primary:
     dims: [time]
-    dtype: float32
+    dtype: int
     attrs:
       units: "1"
       long_name: primary wave QC flag
@@ -81,7 +81,7 @@ data_vars:
       ancillary_variables: wave_flag_secondary
   wave_flag_secondary:
     dims: [time]
-    dtype: float32
+    dtype: int
     attrs:
       units: "1"
       long_name: secondary wave QC flag
@@ -196,7 +196,7 @@ data_vars:
       ancillary_variables: wave_flag_primary wave_flag_secondary
   frequency_flag_primary:
     dims: [frequency]
-    dtype: float32
+    dtype: int
     attrs:
       units: "1"
       long_name: primary waveFrequency QC flag
@@ -215,7 +215,7 @@ data_vars:
       ancillary_variables: frequency_flag_secondary
   frequency_flag_secondary:
     dims: [frequency]
-    dtype: float32
+    dtype: int
     attrs:
       units: "1"
       long_name: secondary waveFrequency QC flag
@@ -229,7 +229,7 @@ data_vars:
       reference: http://cdip.ucsd.edu/documentation
   sst_flag_primary:
     dims: [sst_time]
-    dtype: float32
+    dtype: int
     attrs:
       units: "1"
       long_name: primary sst QC flag
@@ -248,7 +248,7 @@ data_vars:
       ancillary_variables: sst_flag_secondary
   sst_flag_secondary:
     dims: [sst_time]
-    dtype: float32
+    dtype: int
     attrs:
       units: "1"
       long_name: secondary sst QC flag
@@ -290,7 +290,7 @@ data_vars:
       cell_methods: "sstTime: point"
   gps_status_flags:
     dims: [gps_time]
-    dtype: float32
+    dtype: int
     attrs:
       units: "1"
       long_name: gps data flags
