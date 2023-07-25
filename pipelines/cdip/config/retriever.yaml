@@ -15,7 +15,7 @@ coords:
   gps_time:
     name: gpsTime
   dwr_time:
-    name: dwrTime
+    name: [dwrTime, dwr4Time]
 
 data_vars:
   # meta_deploy_latitude:

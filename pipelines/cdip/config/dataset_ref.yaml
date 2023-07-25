@@ -458,7 +458,7 @@ data_vars:
     dtype: float32
     attrs:
       long_name: buoy latitude
-      units: degree_north
+      units: degree_N
       valid_min: -90.0
       valid_max: 90.0
       ncei_name: LATITUDE
@@ -469,7 +469,7 @@ data_vars:
     dtype: float32
     attrs:
       long_name: buoy longitude
-      units: degree_east
+      units: degree_E
       valid_min: -180.0
       valid_max: 180.0
       ncei_name: LONGITUDE

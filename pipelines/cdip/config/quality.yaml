@@ -1,23 +1,11 @@
 managers:
   #---------------------------------------------------------------
-  # - name: Fail if missing coordinates
-  #   checker:
-  #     classname: tsdat.qc.checkers.CheckMissing
-  #   handlers:
-  #     - classname: tsdat.qc.handlers.FailPipeline
-  #       parameters:
-  #         context: Coordinate variables cannot be missing.
-  #   apply_to:
-  #     - COORDS
-
-  - name: Fail if monotonic coordinates
+  - name: Fail if missing coordinates
     checker:
-      classname: tsdat.qc.checkers.CheckMonotonic
-      parameters:
-        require_increasing: true
+      classname: tsdat.qc.checkers.CheckMissing
     handlers:
       - classname: tsdat.qc.handlers.FailPipeline
         parameters:
-          context: Coordinate variables must be strictly increasing.
+          context: Coordinate variables cannot be missing.
     apply_to:
       - COORDS
