@@ -83,27 +83,38 @@ class CDIPDataRequest(DataReader):
             # Drop unecessary coordinates to speed up pipeline
             time_vars_to_keep = ["sstTime", "gpsTime", "dwrTime", "waveTime"]
 
-            if "dwrTime" not in time_vars:
-                ds["dwrTime"] = ds["waveTime"].copy()
-
             for tm in time_vars:
                 if tm not in time_vars_to_keep:
                     ds = ds.drop_dims(tm)
                 else:
                     ds = unique_time(ds, tm)
 
+            for tm in time_vars_to_keep:
+                if tm not in time_vars:
+                    ds[tm] = ds["waveTime"].copy()
+
             return ds
 
         @timeout(10)
         def check_corrupted_vars(ds, var):
-            ds[var].isnull()
+            ds[var].values
 
         # input_key is the station id #
         url = request_netCDF(input_key, data_type=self.parameters.data_type)
         ds = xr.open_dataset(url)
+
+        # Missing data in these buoys
+        if input_key in ["067", "142", "153", "155", "193", "201", "208", "254"]:
+            for tm in ["dwrTime", "gpsTime", "sstTime"]:
+                try:
+                    ds = ds.drop_dims(tm)
+                except:
+                    pass
+
         ds = clean_netcdf(ds)
         ds.attrs["cdip_title"] = ds.attrs["title"]  # reset in pipeline hook
 
+        # Timeout for other issues
         for var in ds.data_vars:
             try:
                 check_corrupted_vars(ds, var)
