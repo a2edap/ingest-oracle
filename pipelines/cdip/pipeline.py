@@ -1,3 +1,4 @@
+import os
 import xarray as xr
 import matplotlib.pyplot as plt
 from cmocean.cm import amp_r, dense, haline
@@ -14,6 +15,9 @@ class CDIPWaveBuoy(IngestPipeline):
 
     def hook_customize_dataset(self, dataset: xr.Dataset) -> xr.Dataset:
         # (Optional) Use this hook to modify the dataset before qc is applied
+
+        # Remove downloaded file from disk space
+        os.remove(dataset.attrs.pop("fname"))
 
         # Reset dataset title to original
         dataset.attrs["title"] = dataset.attrs.pop("cdip_title")
