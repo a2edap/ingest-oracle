@@ -15,9 +15,10 @@ coords:
     dims: [time]
     dtype: datetime64[ns]
     attrs:
-      units: Seconds since 1970-01-01 00:00:00
-      long_name: UTC sample start time
+      units: Seconds since 1970-01-01 00:00:00 UTC
+      long_name: time
       standard_name: time
+      timezone: UTC
       axis: T
       bounds: waveTimeBounds
       comment:
@@ -28,34 +29,37 @@ coords:
     dtype: float32
     attrs:
       long_name: band center frequency
-      units: hertz
+      units: Hz
       standard_name: wave_frequency
       bounds: waveFrequencyBounds
   sst_time:
     dims: [sst_time]
     dtype: datetime64[ns]
     attrs:
-      units: Seconds since 1970-01-01 00:00:00
-      long_name: UTC sample time
+      units: Seconds since 1970-01-01 00:00:00 UTC
+      long_name: time
       standard_name: time
+      timezone: UTC
       axis: T
       bounds: sstTimeBounds
   gps_time:
     dims: [gps_time]
     dtype: datetime64[ns]
     attrs:
-      units: Seconds since 1970-01-01 00:00:00
-      long_name: UTC sample time
+      units: Seconds since 1970-01-01 00:00:00 UTC
+      long_name: time
       standard_name: time
+      timezone: UTC
       axis: T
       bounds: gpsTimeBounds
   dwr_time:
     dims: [dwr_time]
     dtype: datetime64[ns]
     attrs:
-      units: Seconds since 1970-01-01 00:00:00
-      long_name: UTC sample time
+      units: Seconds since 1970-01-01 00:00:00 UTC
+      long_name: time
       standard_name: time
+      timezone: UTC
       axis: T
       bounds: dwrTimeBounds
 
@@ -280,7 +284,7 @@ data_vars:
     dtype: float32
     attrs:
       long_name: sea surface temperature
-      units: degree_C
+      units: degC
       standard_name: sea_surface_temperature
       grid_mapping: metaGridMapping
       valid_min: -5.0
@@ -332,14 +336,14 @@ data_vars:
     dtype: float32
     attrs:
       long_name: buoy orientation
-      units: deg
+      units: degree
       standard_name: platform_orientation
   dwr_inclination:
     dims: [dwr_time]
     dtype: float32
     attrs:
       long_name: magnetic inclination
-      units: deg
+      units: degree
   wave_energy_density:
     dims: [time, frequency]
     dtype: float32

@@ -70,9 +70,10 @@ data_vars:
     dims: [time]
     dtype: float32
     attrs:
-      long_name: Dominant Wave Direction 
+      long_name: Dominant Wave Direction
       standard_name: sea_surface_wave_from_direction
-      comment: the direction from which the waves at the dominant period (DPD) are coming
+      comment:
+        the direction from which the waves at the dominant period (DPD) are coming
       units: degrees
 
   sea_level_pressure:
@@ -89,7 +90,7 @@ data_vars:
     attrs:
       long_name: Air Temperature
       standard_name: air_temperature
-      units: degree_C
+      units: degC
 
   sea_surface_temperature:
     dims: [time]
@@ -97,7 +98,7 @@ data_vars:
     attrs:
       long_name: Sea Surface Temperature
       standard_name: sea_surface_temperature
-      units: degree_C
+      units: degC
 
   dewpoint_temperature:
     dims: [time]
@@ -105,7 +106,7 @@ data_vars:
     attrs:
       long_name: Dewpoint Temperature
       standard_name: dew_point_temperature
-      units: degree_C
+      units: degC
 
   visibility:
     dims: [time]
