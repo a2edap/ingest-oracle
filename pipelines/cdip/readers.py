@@ -1,6 +1,8 @@
 from typing import Dict, Union
 from pydantic import BaseModel, Extra
+import numpy as np
 import xarray as xr
+import os
 import requests
 from tsdat import DataReader
 
@@ -23,6 +25,16 @@ class CDIPDataRequest(DataReader):
     parameters: Parameters = Parameters()
 
     def read(self, input_key: str) -> Union[xr.Dataset, Dict[str, xr.Dataset]]:
+
+        def unique_time(ds, time_var):
+            # Remove repeated timestamps if they exist
+            _, index = np.unique(ds[time_var], return_index=True)
+
+            if len(index) == len(ds[time_var]):
+                return ds
+            else:
+                return ds.isel({time_var: index})
+
         # Get station number and data storage type
         station_number = input_key
         data_type = self.parameters.data_type
@@ -48,8 +60,19 @@ class CDIPDataRequest(DataReader):
         open(fname, "wb").write(r.content)
 
         print(f"Download complete.")
-        ds = xr.open_dataset(fname)
+
+        try:
+            ds = xr.open_dataset(fname)
+        except:
+            os.remove(fname)
+            raise FileExistsError("Not found in database")
+
         ds.attrs["cdip_title"] = ds.attrs["title"]  # reset in pipeline hook
         ds.attrs["fname"] = fname  # removed in pipeline hook
+
+        # Remove duplicated time values that causes pipeline to fail
+        time_vars = [v for v in ds.coords if "time" in v.lower()]
+        for tm in time_vars:
+            ds = unique_time(ds, tm)
 
         return ds

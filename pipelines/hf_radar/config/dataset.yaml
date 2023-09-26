@@ -51,6 +51,8 @@ data_vars:
       standard_name: surface_eastward_sea_water_velocity
       grid_mapping: wgs84
       cell_methods: "depth: mean time: mean"
+      valid_min: -5
+      valid_max: 5
   v:
     dims: [time, lat, lon]
     dtype: float32
@@ -60,10 +62,13 @@ data_vars:
       standard_name: surface_northward_sea_water_velocity
       grid_mapping: wgs84
       cell_methods: "depth: mean time: mean"
+      valid_min: -5
+      valid_max: 5
   wgs84:
     dims: []
     dtype: int8
     attrs:
+      long_name: WGS84
       units: degree
       grid_mapping_name: latitude_longitude
       longitude_of_prime_meridian: 0.0
