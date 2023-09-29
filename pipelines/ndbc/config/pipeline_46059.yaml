@@ -1,0 +1,26 @@
+classname: pipelines.ndbc.pipeline.Ndbc
+
+triggers:
+  - .*46059.*.txt
+
+retriever:
+  path: pipelines/ndbc/config/retriever.yaml
+
+dataset:
+  path: pipelines/ndbc/config/dataset.yaml
+  overrides:
+    /attrs/location_id: 46059
+    /data_vars/latitude/data: 38.069
+    /data_vars/longitude/data: -129.976
+    /data_vars/site_elevation/data: 0
+    /data_vars/air_temp_height/data: 3.7
+    /data_vars/anemometer_height/data: 3.7
+    /data_vars/barometer_elevation/data: 3.7
+    /data_vars/sea_temp_depth/data: 1.5
+    /data_vars/water_depth/data: 4640
+    /data_vars/watch_circle_radius/data: 4368.089
+
+quality:
+  path: shared/quality.yaml
+storage:
+  path: shared/storage.yaml

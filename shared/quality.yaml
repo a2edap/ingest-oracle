@@ -47,6 +47,7 @@ managers:
         sea_temp_depth,
         water_depth,
         watch_circle_radius,
+        elevation,
       ]
 
   - name: Flag data below minimum valid threshold
@@ -71,6 +72,7 @@ managers:
         sea_temp_depth,
         water_depth,
         watch_circle_radius,
+        elevation,
       ]
 
   - name: Flag data above maximum valid threshold
@@ -84,6 +86,7 @@ managers:
           meaning: "Value is greater than the valid_max."
     apply_to:
       - DATA_VARS
+
     exclude:
       [
         latitude,
@@ -95,4 +98,6 @@ managers:
         sea_temp_depth,
         water_depth,
         watch_circle_radius,
+        elevation,
       ]
+

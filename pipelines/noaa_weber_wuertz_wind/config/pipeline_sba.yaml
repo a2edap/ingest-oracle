@@ -1,0 +1,20 @@
+classname: pipelines.noaa_weber_wuertz_wind.pipeline.NoaaWeberWuertzWind
+
+triggers:
+  # DEVELOPER: Update regex patterns that should trigger this pipeline
+  - .*/noaa_weber_wuertz_wind/test/data/input/sba/.*/.*/sba.*w
+retriever:
+  path: pipelines/noaa_weber_wuertz_wind/config/retriever.yaml
+
+dataset:
+  path: pipelines/noaa_weber_wuertz_wind/config/dataset.yaml
+  overrides:
+    /attrs/location_id: sba
+    /data_vars/elevation/data: 4
+    /data_vars/latitude/data: 34.43
+    /data_vars/longitude/data: -119.85
+
+quality:
+  path: shared/quality.yaml
+storage:
+  path: shared/storage.yaml

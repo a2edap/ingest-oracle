@@ -1,0 +1,21 @@
+classname: pipelines.noaa_weber_wuertz_wind.pipeline.NoaaWeberWuertzWind
+
+triggers:
+  # DEVELOPER: Update regex patterns that should trigger this pipeline
+  - .*/noaa_weber_wuertz_wind/test/data/input/sns/.*/.*/sns.*w
+
+retriever:
+  path: pipelines/noaa_weber_wuertz_wind/config/retriever.yaml
+
+dataset:
+  path: pipelines/noaa_weber_wuertz_wind/config/dataset.yaml
+  overrides:
+    /attrs/location_id: sns
+    /data_vars/elevation/data: 17
+    /data_vars/latitude/data: 33.28
+    /data_vars/longitude/data: -119.52
+
+quality:
+  path: shared/quality.yaml
+storage:
+  path: shared/storage.yaml
