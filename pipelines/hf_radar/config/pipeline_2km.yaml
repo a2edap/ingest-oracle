@@ -1,0 +1,19 @@
+classname: pipelines.hf_radar.pipeline.SCCOOS_HFRadar
+
+triggers:
+  - \b[0-9]{4}-[0-9]{2}\b
+
+retriever:
+  path: pipelines/hf_radar/config/retriever.yaml
+  overrides:
+    /readers/.*/parameters/resolution: 2km
+
+dataset:
+  path: pipelines/hf_radar/config/dataset.yaml
+  overrides:
+    /attrs/qualifier: 2km
+
+quality:
+  path: shared/quality.yaml
+storage:
+  path: shared/storage.yaml

@@ -1,0 +1,20 @@
+classname: pipelines.noaa_weber_wuertz_temp.pipeline.NoaaWeberWuertzTemp
+
+triggers:
+  # DEVELOPER: Update regex patterns that should trigger this pipeline
+  - .*/noaa_weber_wuertz_temp/test/data/input/acv/.*/.*/acv.*t
+
+retriever:
+  path: pipelines/noaa_weber_wuertz_temp/config/retriever.yaml
+
+dataset:
+  path: pipelines/noaa_weber_wuertz_temp/config/dataset.yaml
+  overrides:
+    /data_vars/elevation/data: 56
+    /data_vars/latitude/data: 40.97
+    /data_vars/longitude/data: -124.11
+
+quality:
+  path: shared/quality.yaml
+storage:
+  path: shared/storage.yaml

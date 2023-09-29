@@ -1,0 +1,52 @@
+classname: tsdat.io.retrievers.DefaultRetriever
+readers:
+  .*:
+    classname: pipelines.noaa_weber_wuertz_temp.readers.NOAATempReader
+
+coords:
+  time:
+    data_converters:
+      - classname: tsdat.io.converters.StringToDatetime
+        format: "%Y-%m-%d %H:%M:%S"
+        timezone: UTC
+    name: time
+
+data_vars:
+  height:
+    name: height
+
+  average_uncorrected_RASS_temperature:
+    name: mean_uncorrected_RASS_temperature
+
+  average_corrected_RASS_temperature:
+    name: mean_corrected_RASS_temperature
+
+  average_vertical_wind:
+    name: mean_vertical_wind
+
+  qc_average_uncorrected_RASS_temperature:
+    name: qc_average_uncorrected_RASS_temperature
+
+  qc_average_corrected_RASS_temperature:
+    name: quality_control_mean_corrected_RASS_temperature
+
+  qc_average_vertical_wind:
+    name: quality_control_mean_vertical_wind
+
+  number_of_records_average_uncorrected_RASS_temperature:
+    name: number_of_records_mean_uncorrected_RASS_temperature
+
+  number_of_records_average_corrected_RASS_temperature:
+    name: number_of_records_mean_corrected_RASS_temperature
+
+  number_of_records_average_vertical_wind:
+    name: number_of_records_mean_vertical_wind
+
+  latitude:
+    name: latitude
+
+  longitude:
+    name: longitude
+
+  elevation:
+    name: elevation
