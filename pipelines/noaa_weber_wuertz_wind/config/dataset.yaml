@@ -2,7 +2,9 @@
 
 attrs:
   title: noaa_weber_wuertz_wind
-  description: Taking data for Weber Wuertz Wind data from CA and converting it from ascii text to netCDF
+  description:
+    Taking data for Weber Wuertz Wind data from CA and converting it from ascii text to
+    netCDF
   location_id: acv
   dataset_name: noaa_weber_wuertz_wind
   data_level: b0
@@ -13,24 +15,27 @@ coords:
     dtype: datetime64[s]
     attrs:
       units: Seconds since 1970-01-01 00:00:00
+      standard_name: time
+      long_name: Time
+      timezone: UTC
 
 data_vars:
   height:
     dims: [time]
     dtype: float32
     attrs:
-      long_name: Height
+      long_name: Height above ground
       standard_name: height
       units: km
-  
+
   wind_speed:
     dims: [time]
     dtype: float32
-    attrs: 
+    attrs:
       long_name: Wind speed
       standard_name: wind_speed
       units: m/s
-  
+
   wind_direction:
     dims: [time]
     dtype: float32
@@ -39,14 +44,7 @@ data_vars:
       standard_name: wind_from_direction
       units: degrees
       comment: degrees from north
-  
-  QC_wind:
-    dims: [time]
-    dtype: int
-    attrs:
-      long_name: Quality control for wind variables
-      units: 1
-  
+
   radial_velocity_beam_1:
     dims: [time]
     dtype: float32
@@ -54,7 +52,7 @@ data_vars:
       long_name: Radial Velocity for beam 1
       standard_name: radial_sea_water_velocity_toward_instrument
       units: m/s
-      comment: postive towards radar 
+      comment: postive towards radar
 
   radial_velocity_beam_2:
     dims: [time]
@@ -79,21 +77,21 @@ data_vars:
     dtype: int
     attrs:
       long_name: Number of records in mean for beam 1
-      units: 1
+      units: "1"
 
   number_of_records_in_mean_beam_2:
     dims: [time]
     dtype: int
     attrs:
       long_name: Number of records in mean for beam 2
-      units: 1
+      units: "1"
 
   number_of_records_in_mean_beam_3:
     dims: [time]
     dtype: int
     attrs:
       long_name: Number of records in mean for beam 3
-      units: 1
+      units: "1"
 
   SNR_beam_1:
     dims: [time]
@@ -116,28 +114,6 @@ data_vars:
       long_name: Signal-to-noise ratio for beam 3
       units: dB
 
-
-  QC_radial_velocity_beam_1:
-    dims: [time]
-    dtype: int 
-    attrs:
-      long_name: Quality control of radial velocity for beam 1 
-      units: 1
-
-  QC_radial_velocity_beam_2:
-    dims: [time]
-    dtype: int 
-    attrs:
-      long_name: Quality control of radial velocity for beam 2 
-      units: 1
-
-  QC_radial_velocity_beam_3:
-    dims: [time]
-    dtype: int 
-    attrs:
-      long_name: Quality control of radial velocity for beam 3
-      units: 1
-
   latitude:
     data: 40.97
     dims: []
@@ -145,8 +121,8 @@ data_vars:
     attrs:
       long_name: North latitude
       standard_name: latitude
-      comment: Recorded lattitude at the instrument location
-      units: degrees_N
+      comment: Recorded latitude at the instrument location
+      units: degree_N
 
   longitude:
     data: -124.11
@@ -156,12 +132,12 @@ data_vars:
       long_name: East longitude
       standard_name: longitude
       comment: Recorded longitude at the instrument location
-      units: degrees_E
+      units: degree_E
 
   elevation:
-    data: 56 
+    data: 56
     dims: []
     dtype: float32
     attrs:
-      long_name: Site elevation 
+      long_name: Site elevation
       units: m

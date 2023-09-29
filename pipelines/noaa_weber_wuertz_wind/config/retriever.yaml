@@ -2,7 +2,7 @@ classname: tsdat.io.retrievers.DefaultRetriever
 readers:
   .*:
     classname: pipelines.noaa_weber_wuertz_wind.readers.CustomDataReader
-    
+
 coords:
   time:
     data_converters:
@@ -11,17 +11,17 @@ coords:
         timezone: UTC
     name: time
 
-data_vars:    
+data_vars:
   height:
     name: height
 
   wind_speed:
     name: wind_speed
-  
+
   wind_direction:
     name: wind_direction
 
-  QC_wind:
+  qc_wind:
     name: QC_wind
 
   radial_velocity_beam_1:
@@ -51,14 +51,14 @@ data_vars:
   SNR_beam_3:
     name: SNR_beam_3
 
-  QC_radial_velocity_beam_1:
-    name: QC_radial_velocity_beam_1
+  qc_radial_velocity_beam_1:
+    name: qc_radial_velocity_beam_1
 
-  QC_radial_velocity_beam_2:
-    name: QC_radial_velocity_beam_2
+  qc_radial_velocity_beam_2:
+    name: qc_radial_velocity_beam_2
 
-  QC_radial_velocity_beam_3:
-    name: QC_radial_velocity_beam_3
+  qc_radial_velocity_beam_3:
+    name: qc_radial_velocity_beam_3
 
   latitude:
     name: latitude
@@ -67,5 +67,4 @@ data_vars:
     name: longitude
 
   elevation:
-    name: elevation 
-        
+    name: elevation
