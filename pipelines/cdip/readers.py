@@ -2,9 +2,9 @@ from typing import Dict, Union
 from pydantic import BaseModel, Extra
 import numpy as np
 import xarray as xr
-
+import os
+import requests
 from tsdat import DataReader
-from mhkit.wave.io.cdip import request_netCDF
 
 
 class CDIPDataRequest(DataReader):
@@ -25,6 +25,7 @@ class CDIPDataRequest(DataReader):
     parameters: Parameters = Parameters()
 
     def read(self, input_key: str) -> Union[xr.Dataset, Dict[str, xr.Dataset]]:
+
         def unique_time(ds, time_var):
             # Remove repeated timestamps if they exist
             _, index = np.unique(ds[time_var], return_index=True)
@@ -34,24 +35,44 @@ class CDIPDataRequest(DataReader):
             else:
                 return ds.isel({time_var: index})
 
-        def clean_netcdf(nc):
-            ds = xr.open_dataset(xr.backends.NetCDF4DataStore(nc))
+        # Get station number and data storage type
+        station_number = input_key
+        data_type = self.parameters.data_type
 
-            excess_dims = ["sourceCount", "metaBoundsCount"]
-            ds = ds.drop_dims(excess_dims)
+        if data_type == "historic":
+            cdip_archive = (
+                "https://thredds.cdip.ucsd.edu/thredds/fileServer/cdip/archive"
+            )
+            data_url = (
+                f"{cdip_archive}/{station_number}p1/{station_number}p1_historic.nc"
+            )
+        elif data_type == "realtime":
+            cdip_realtime = (
+                "https://thredds.cdip.ucsd.edu/thredds/fileServer/cdip/realtime"
+            )
+            data_url = f"{cdip_realtime}/{station_number}p1_rt.nc"
 
-            # Check for duplicate timestamps
-            # map all the time coordinates to a single time (waveTime) - skip for later
-            time_vars = [v for v in ds.coords if "time" in v.lower()]
-            time_vars.remove("waveTime")
-            for tm in time_vars:
-                ds = unique_time(ds, tm)
+        # Create filename to download file into
+        fname = f"cdip.{station_number}.{data_type}.nc"
 
-            return ds
+        print(f"Downloading file {data_url}...")
+        r = requests.get(data_url)
+        open(fname, "wb").write(r.content)
 
-        # input_key is the station id #
-        nc = request_netCDF(input_key, data_type=self.parameters.data_type)
-        ds = clean_netcdf(nc)
+        print(f"Download complete.")
+
+        try:
+            ds = xr.open_dataset(fname)
+        except:
+            os.remove(fname)
+            raise FileExistsError("Not found in database")
+
         ds.attrs["cdip_title"] = ds.attrs["title"]  # reset in pipeline hook
+        ds.attrs["fname"] = fname  # removed in pipeline hook
+
+        # Remove duplicated time values that causes pipeline to fail
+        time_vars = [v for v in ds.coords if "time" in v.lower()]
+        for tm in time_vars:
+            ds = unique_time(ds, tm)
 
         return ds

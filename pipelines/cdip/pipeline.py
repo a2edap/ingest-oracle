@@ -1,6 +1,6 @@
+import os
 import xarray as xr
 import matplotlib.pyplot as plt
-import act
 from cmocean.cm import amp_r, dense, haline
 
 from tsdat import IngestPipeline, get_start_date_and_time_str, get_filename
@@ -15,6 +15,9 @@ class CDIPWaveBuoy(IngestPipeline):
 
     def hook_customize_dataset(self, dataset: xr.Dataset) -> xr.Dataset:
         # (Optional) Use this hook to modify the dataset before qc is applied
+
+        # Remove downloaded file from disk space
+        os.remove(dataset.attrs.pop("fname"))
 
         # Reset dataset title to original
         dataset.attrs["title"] = dataset.attrs.pop("cdip_title")
@@ -41,8 +44,8 @@ class CDIPWaveBuoy(IngestPipeline):
 
     def hook_plot_dataset(self, dataset: xr.Dataset):
         ds = dataset
-        loc = self.dataset_config.attrs.location_id
-        datastream: str = self.dataset_config.attrs.datastream
+        loc = dataset.attrs["location_id"]
+        datastream: str = dataset.attrs["datastream"]
 
         date, time = get_start_date_and_time_str(dataset)
 
@@ -50,7 +53,6 @@ class CDIPWaveBuoy(IngestPipeline):
         plt.style.use("shared/styling.mplstyle")
 
         with self.storage.uploadable_dir(datastream) as tmp_dir:
-
             fig, axs = plt.subplots(nrows=3)
 
             # Plot Wave Heights
