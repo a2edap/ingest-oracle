@@ -1,0 +1,37 @@
+classname: tsdat.io.retrievers.DefaultRetriever
+readers:
+  .*:
+    classname: pipelines.csi_datalogger_surface_met.readers.CustomDataReader
+
+coords:
+  time:
+    data_converters:
+      - classname: tsdat.io.converters.StringToDatetime
+        format: "%Y-%m-%d %H:%M:%S"
+        timezone: UTC
+    name: time
+
+data_vars:
+  pressure:
+    name: Pressure (mb)
+
+  temperature:
+    name: Temperature (C)
+
+  relative_humidity:
+    name: Relative Humidity (%)
+
+  scalar_wind_speed:
+    name: Scalar Wind Speed (m/s)
+
+  wind_direction:
+    name: Wind Direction (degrees)
+
+  precipitation:
+    name: Precipitation (mm)
+    data_converters:
+      - classname: tsdat.io.converters.UnitsConverter
+        input_units: mm
+
+  solar_radiation:
+    name: Solar Radiation (W/m^2)

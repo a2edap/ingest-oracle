@@ -1,0 +1,21 @@
+classname: pipelines.csi_datalogger_surface_met.pipeline.CsiDataloggerSurfaceMet
+
+triggers:
+  # DEVELOPER: Update regex patterns that should trigger this pipeline
+  - /share/home/ocoleman/upprocessed-met/input/wcc/..../.../...........m
+
+retriever:
+  path: pipelines/csi_datalogger_surface_met/config/retriever.yaml
+
+dataset:
+  path: pipelines/csi_datalogger_surface_met/config/dataset.yaml
+  overrides:
+    /attrs/location_id: wcc
+    /data_vars/latitude/data: 37.799999
+    /data_vars/longitude/data: -120.639999
+    /data_vars/elevation/data: 113
+
+quality:
+  path: shared/quality.yaml
+storage:
+  path: shared/storage.yaml
