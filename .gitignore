@@ -14,3 +14,8 @@ htmlcov/
 typings/
 pipelines/ingest_testing
 *.ipynb
+**acv/
+**bby/
+**pts/
+**sba/
+**sns/
