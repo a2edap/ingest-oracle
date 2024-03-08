@@ -15,13 +15,13 @@ data_vars:
   height:
     name: height
 
-  average_uncorrected_RASS_temperature:
+  uncorrected_air_temperature:
     name: mean_uncorrected_RASS_temperature
 
-  average_corrected_RASS_temperature:
+  air_temperature:
     name: mean_corrected_RASS_temperature
 
-  average_vertical_wind:
+  vertical_wind:
     name: mean_vertical_wind
 
   qc_average_uncorrected_RASS_temperature:

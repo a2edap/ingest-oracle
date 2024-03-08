@@ -26,21 +26,21 @@ data_vars:
       standard_name: height
       units: km
 
-  average_uncorrected_RASS_temperature:
+  uncorrected_air_temperature:
     dims: [time]
     dtype: float
     attrs:
       long_name: Average uncorrected RASS temperature
       units: degC
 
-  average_corrected_RASS_temperature:
+  air_temperature:
     dims: [time]
     dtype: float
     attrs:
       long_name: Average corrected RASS temperature
       units: degC
 
-  average_vertical_wind:
+  vertical_wind:
     dims: [time]
     dtype: float
     attrs:
