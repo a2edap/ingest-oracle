@@ -8,9 +8,9 @@ readers:
 coords:
   time:
     name: time
-  lat:
+  latitude:
     name: lat
-  lon:
+  longitude:
     name: lon
 
 data_vars:

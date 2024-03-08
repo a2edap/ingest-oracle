@@ -77,7 +77,7 @@ coords:
     dtype: datetime64[s]
     attrs:
       units: Seconds since 1970-01-01 00:00:00
-  lat:
+  latitude:
     dims: [lat]
     dtype: float32
     attrs:
@@ -85,7 +85,7 @@ coords:
       long_name: latitude
       standard_name: latitude
       _CoordinateAxisType: Lat
-  lon:
+  longitude:
     dims: [lon]
     dtype: float32
     attrs:
