@@ -52,7 +52,7 @@ class CDIPWaveBuoy(IngestPipeline):
         plt.style.use("default")  # clear any styles that were set before
         plt.style.use("shared/styling.mplstyle")
 
-        with self.storage.uploadable_dir(datastream) as tmp_dir:
+        with self.storage.uploadable_dir() as tmp_dir:
             fig, axs = plt.subplots(nrows=3)
 
             # Plot Wave Heights

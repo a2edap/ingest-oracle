@@ -26,7 +26,8 @@ class SCCOOS_HFRadar(IngestPipeline):
         # but before it gets saved to the storage area
 
         # Drop QC for grid information
-        dataset = dataset.drop("qc_wgs84")
+        if "qc_wgs84" in dataset:
+            dataset = dataset.drop("qc_wgs84")
         # Update history
         dataset.attrs["history"] = (
             dataset.attrs.pop("History") + "\n" + dataset.attrs.pop("history")
@@ -43,11 +44,11 @@ class SCCOOS_HFRadar(IngestPipeline):
         plt.style.use("default")  # clear any styles that were set before
         plt.style.use("shared/styling.mplstyle")
 
-        with self.storage.uploadable_dir(datastream) as tmp_dir:
+        with self.storage.uploadable_dir() as tmp_dir:
             fig, ax = plt.subplots(1, 2, figsize=(12, 10))
             h1 = ax[0].pcolormesh(
-                dataset["lon"],
-                dataset["lat"],
+                dataset["longitude"],
+                dataset["latitude"],
                 dataset["u"].mean("time"),
                 cmap="coolwarm",
                 vmin=-1,
@@ -60,8 +61,8 @@ class SCCOOS_HFRadar(IngestPipeline):
             )
 
             h2 = ax[1].pcolormesh(
-                dataset["lon"],
-                dataset["lat"],
+                dataset["longitude"],
+                dataset["latitude"],
                 dataset["v"].mean("time"),
                 cmap="coolwarm",
                 vmin=-1,
