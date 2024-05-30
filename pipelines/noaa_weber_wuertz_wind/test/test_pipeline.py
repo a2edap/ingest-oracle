@@ -1,11 +1,8 @@
 import xarray as xr
 from pathlib import Path
 from tsdat import PipelineConfig, assert_close
-import os
 
 
-# DEVELOPER: Update paths to your configuration(s), test input(s), and expected test
-# results files.
 def test_noaa_weber_wuertz_temp_pipeline():
     config_path = Path("pipelines/noaa_weber_wuertz_temp/config/pipeline.yaml")
     config = PipelineConfig.from_yaml(config_path)
