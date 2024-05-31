@@ -46,7 +46,6 @@ class SCCOOS_HFRadar(IngestPipeline):
         plt.style.use("default")  # clear any styles that were set before
 
         with plt.style.context("shared/styling.mplstyle"):
-        with plt.style.context("shared/styling.mplstyle"):
             fig, ax = plt.subplots(1, 2, figsize=(12, 10))
             h1 = ax[0].pcolormesh(
                 dataset["longitude"],
