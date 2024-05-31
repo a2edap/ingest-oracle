@@ -22,13 +22,13 @@ data_vars:
     name: waveFlagPrimary
   wave_flag_secondary:
     name: waveFlagSecondary
-  wave_hs:
+  significant_wave_height:
     name: waveHs
-  wave_tp:
+  dominant_wave_period:
     name: waveTp
-  wave_ta:
+  average_wave_period:
     name: waveTa
-  wave_dp:
+  dominant_wave_direction:
     name: waveDp
   wave_tz:
     name: waveTz
@@ -40,7 +40,7 @@ data_vars:
     name: sstFlagPrimary
   sst_flag_secondary:
     name: sstFlagSecondary
-  sst:
+  sea_surface_temperature:
     name: sstSeaSurfaceTemperature
   gps_status_flags:
     name: gpsStatusFlags

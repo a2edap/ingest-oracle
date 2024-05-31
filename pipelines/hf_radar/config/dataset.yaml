@@ -16,22 +16,22 @@ coords:
       standard_name: time
       units: Seconds since 1970-01-01 00:00:00 UTC
       timezone: UTC
-  lat:
-    dims: [lat]
+  latitude:
+    dims: [latitude]
     dtype: float32
     attrs:
       units: degree_N
       long_name: Latitude
       standard_name: latitude
-      _CoordinateAxisType: Lat
-  lon:
-    dims: [lon]
+      _CoordinateAxisType: latitude
+  longitude:
+    dims: [longitude]
     dtype: float32
     attrs:
       units: degree_E
       long_name: Longitude
       standard_name: longitude
-      _CoordinateAxisType: Lon
+      _CoordinateAxisType: longitude
 
 data_vars:
   # time_run:
@@ -43,7 +43,7 @@ data_vars:
   #     standard_name: forecast_reference_time
   #     _CoordinateAxisType: RunTime
   u:
-    dims: [time, lat, lon]
+    dims: [time, latitude, longitude]
     dtype: float32
     attrs:
       units: m/s
@@ -54,7 +54,7 @@ data_vars:
       valid_min: -5
       valid_max: 5
   v:
-    dims: [time, lat, lon]
+    dims: [time, latitude, longitude]
     dtype: float32
     attrs:
       units: m/s

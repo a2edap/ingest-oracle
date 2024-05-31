@@ -52,30 +52,30 @@ class CDIPWaveBuoy(IngestPipeline):
         plt.style.use("default")  # clear any styles that were set before
         plt.style.use("shared/styling.mplstyle")
 
-        with self.storage.uploadable_dir(datastream) as tmp_dir:
+        with self.storage.uploadable_dir() as tmp_dir:
             fig, axs = plt.subplots(nrows=3)
 
             # Plot Wave Heights
             c2 = amp_r(0.50)
-            ds["wave_hs"].plot(ax=axs[0], c=c2, label=r"H$_{sig}$")
+            ds["significant_wave_height"].plot(ax=axs[0], c=c2, label=r"H$_{sig}$")
             axs[0].legend(bbox_to_anchor=(1, -0.10), ncol=3)
             axs[0].set_ylabel("Wave Height (m)")
 
             # Plot Wave Periods
             c1, c2 = dense(0.3), dense(0.6)
-            ds["wave_ta"].plot(ax=axs[1], c=c1, label=r"T$_{mean}$")
-            ds["wave_tp"].plot(ax=axs[1], c=c2, label=r"T$_{peak}$")
+            ds["average_wave_period"].plot(ax=axs[1], c=c1, label=r"T$_{mean}$")
+            ds["dominant_wave_period"].plot(ax=axs[1], c=c2, label=r"T$_{peak}$")
             axs[1].legend(bbox_to_anchor=(1, -0.10), ncol=3)
             axs[1].set_ylabel("Wave Period (s)")
 
             # Plot Wave Directions
             c1 = haline(0.5)
-            ds["wave_dp"].plot(ax=axs[2], c=c1, label=r"D$_{peak}$")
+            ds["dominant_wave_direction"].plot(ax=axs[2], c=c1, label=r"D$_{peak}$")
             axs[2].legend(bbox_to_anchor=(1, -0.10), ncol=2)
             axs[2].set_ylabel("Wave Direction (deg)")
 
             # c1 = haline(0.9)
-            # ds["sst"].plot(ax=axs[3], c=c1, label=r"Sea Surface$")
+            # ds["sea_surface_temperature"].plot(ax=axs[3], c=c1, label=r"Sea Surface$")
             # axs[3].legend(bbox_to_anchor=(1, -0.10), ncol=2)
             # axs[3].set_ylabel("Temperature (deg C)")
 
