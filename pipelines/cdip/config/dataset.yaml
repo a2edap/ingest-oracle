@@ -135,7 +135,7 @@ data_vars:
           freq_over_hull_response_limit,
         ]
       reference: http://cdip.ucsd.edu/documentation
-  wave_hs:
+  significant_wave_height:
     dims: [time]
     dtype: float32
     attrs:
@@ -147,11 +147,11 @@ data_vars:
       valid_max: 20.0
       ancillary_variables: wave_flag_primary wave_flag_secondary
       ncei_name: WAVE HEIGHT - SIGNIFICANT
-  wave_tp:
+  dominant_wave_period:
     dims: [time]
     dtype: float32
     attrs:
-      long_name: peak wave period
+      long_name: dominant wave period
       units: s
       standard_name: sea_surface_wave_period_at_variance_spectral_density_maximum
       grid_mapping: metaGridMapping
@@ -159,7 +159,7 @@ data_vars:
       valid_max: 40.0
       ancillary_variables: wave_flag_primary wave_flag_secondary
       ncei_name: WAVE - PEAK PERIOD
-  wave_ta:
+  average_wave_period:
     dims: [time]
     dtype: float32
     attrs:
@@ -173,7 +173,7 @@ data_vars:
       ncei_name: WAVE PERIOD - AVERAGE
       additional_processing:
         Calculated from the full-spectrum, buoy-returned energy density values.
-  wave_dp:
+  dominant_wave_direction:
     dims: [time]
     dtype: float32
     attrs:
@@ -280,7 +280,7 @@ data_vars:
           reference_temperature_off,
         ]
       reference: http://cdip.ucsd.edu/documentation
-  sst:
+  sea_surface_temperature:
     dims: [sst_time]
     dtype: float32
     attrs:
