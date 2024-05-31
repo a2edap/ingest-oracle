@@ -26,7 +26,8 @@ class SCCOOS_HFRadar(IngestPipeline):
         # but before it gets saved to the storage area
 
         # Drop QC for grid information
-        dataset = dataset.drop("qc_wgs84")
+        if "qc_wgs84" in dataset:
+            dataset = dataset.drop("qc_wgs84")
         # Update history
         dataset.attrs["history"] = (
             dataset.attrs.pop("History") + "\n" + dataset.attrs.pop("history")
@@ -41,9 +42,8 @@ class SCCOOS_HFRadar(IngestPipeline):
         date, time = get_start_date_and_time_str(dataset)
 
         plt.style.use("default")  # clear any styles that were set before
-        plt.style.use("shared/styling.mplstyle")
 
-        with self.storage.uploadable_dir(datastream) as tmp_dir:
+        with plt.style.context("shared/styling.mplstyle"):
             fig, ax = plt.subplots(1, 2, figsize=(12, 10))
             h1 = ax[0].pcolormesh(
                 dataset["lon"],
@@ -75,6 +75,6 @@ class SCCOOS_HFRadar(IngestPipeline):
             fig.colorbar(h2, ax=ax[1], label="Velocity [m/s]")
 
             fig.suptitle(f"Monthly Average for {date}")
-            plot_file = get_filename(dataset, title="surface_velocity", extension="png")
-            fig.savefig(tmp_dir / plot_file)
+            plot_file = self.get_ancillary_filepath(f"surface_velocity.png")
+            plt.savefig(plot_file)
             plt.close(fig)
