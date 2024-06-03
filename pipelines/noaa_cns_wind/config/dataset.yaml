@@ -113,7 +113,7 @@ data_vars:
       units: dB
 
   latitude:
-    data: 40.97
+    data: 36.69
     dims: []
     dtype: float32
     attrs:
@@ -123,7 +123,7 @@ data_vars:
       units: degree_N
 
   longitude:
-    data: -124.11
+    data: -121.76
     dims: []
     dtype: float32
     attrs:
@@ -133,7 +133,7 @@ data_vars:
       units: degree_E
 
   elevation:
-    data: 56
+    data: 51
     dims: []
     dtype: float32
     attrs:
