@@ -1,0 +1,15 @@
+classname: pipelines.noaa_cns_wind.pipeline.NoaaCnsWind
+
+triggers:
+  - .*/noaa_cns_wind/test/data/input/nps/.*/.*/nps.*w
+
+retriever:
+  path: pipelines/noaa_cns_wind/config/retriever.yaml
+
+dataset:
+  path: pipelines/noaa_cns_wind/config/dataset.yaml
+
+quality:
+  path: shared/quality.yaml
+storage:
+  path: shared/storage.yaml
