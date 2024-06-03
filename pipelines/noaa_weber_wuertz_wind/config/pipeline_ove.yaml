@@ -1,0 +1,20 @@
+classname: pipelines.noaa_weber_wuertz_wind.pipeline.NoaaWeberWuertzWind
+
+triggers:
+  - .*/noaa_weber_wuertz_wind/test/data/input/ove/.*/.*/ove.*w
+
+retriever:
+  path: pipelines/noaa_weber_wuertz_wind/config/retriever.yaml
+
+dataset:
+  path: pipelines/noaa_weber_wuertz_wind/config/dataset.yaml
+  overrides:
+    /attrs/location_id: ove
+    /data_vars/elevation/data: 66 
+    /data_vars/latitude/data: 39.51 
+    /data_vars/longitude/data: -121.63  
+
+quality:
+  path: shared/quality.yaml
+storage:
+  path: shared/storage.yaml

@@ -24,19 +24,20 @@ def test_cdip_pipeline_rt():
 
 
 # CDIP "historic" data
-def test_cdip_pipeline_hist():
-    config_path = Path("pipelines/cdip/config/pipeline_historic.yaml")
-    config = PipelineConfig.from_yaml(config_path)
-    pipeline = config.instantiate_pipeline()
+# uncomment to run the test locally - file too large.
+# def test_cdip_pipeline_hist():
+#     config_path = Path("pipelines/cdip/config/pipeline_historic.yaml")
+#     config = PipelineConfig.from_yaml(config_path)
+#     pipeline = config.instantiate_pipeline()
 
-    test_file = "181"
-    expected_file = "pipelines/cdip/test/data/expected/cdip.181.c1.20110429.140607.nc"
+#     test_file = "181"
+#     expected_file = "pipelines/cdip/test/data/expected/cdip.181.c1.20110429.140607.nc"
 
-    dataset = pipeline.run([test_file])
-    expected: xr.Dataset = xr.open_dataset(expected_file)  # type: ignore
+#     dataset = pipeline.run([test_file])
+#     expected: xr.Dataset = xr.open_dataset(expected_file)  # type: ignore
 
-    time = slice(np.datetime64("2020-02-01"), np.datetime64("2020-05-01"))
-    dataset = dataset.sel(time=time, sst_time=time, gps_time=time, dwr_time=time)
-    expected = expected.sel(time=time, sst_time=time, gps_time=time, dwr_time=time)
+#     time = slice(np.datetime64("2020-02-01"), np.datetime64("2020-05-01"))
+#     dataset = dataset.sel(time=time, sst_time=time, gps_time=time, dwr_time=time)
+#     expected = expected.sel(time=time, sst_time=time, gps_time=time, dwr_time=time)
 
-    assert_close(dataset, expected, check_attrs=False)
+#     assert_close(dataset, expected, check_attrs=False)

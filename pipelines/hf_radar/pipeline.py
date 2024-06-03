@@ -28,6 +28,8 @@ class SCCOOS_HFRadar(IngestPipeline):
         # Drop QC for grid information
         if "qc_wgs84" in dataset:
             dataset = dataset.drop("qc_wgs84")
+        if "qc_wgs84" in dataset:
+            dataset = dataset.drop("qc_wgs84")
         # Update history
         dataset.attrs["history"] = (
             dataset.attrs.pop("History") + "\n" + dataset.attrs.pop("history")
@@ -75,7 +77,6 @@ class SCCOOS_HFRadar(IngestPipeline):
             fig.colorbar(h2, ax=ax[1], label="Velocity [m/s]")
 
             fig.suptitle(f"Monthly Average for {date}")
-            # plot_file = get_filename(dataset, title="surface_velocity", extension="png")
             plot_file = self.get_ancillary_filepath(f"surface_velocity.png")
             plt.savefig(plot_file)
             plt.close(fig)
