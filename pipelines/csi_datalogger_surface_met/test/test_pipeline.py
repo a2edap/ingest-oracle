@@ -2,9 +2,7 @@ import xarray as xr
 from pathlib import Path
 from tsdat import PipelineConfig, assert_close
 
-
-# DEVELOPER: Update paths to your configuration(s), test input(s), and expected test
-# results files.
+# Update the test_file and expected_file locally to run the test
 # def test_csi_datalogger_surface_met_pipeline():
 #     config_path = Path("pipelines/csi_datalogger_surface_met/config/pipeline.yaml")
 #     config = PipelineConfig.from_yaml(config_path)
