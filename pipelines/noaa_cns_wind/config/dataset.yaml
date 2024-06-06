@@ -1,7 +1,7 @@
 attrs:
   title: noaa_cns_wind
   description:
-    Taking data for Radar 915MHz CnsTemp from CA and converting it from ascii text to
+    Taking data for Radar 915MHz CnsWind from CA and converting it from ascii text to
     netCDF
   location_id: nps
   dataset_name: noaa_cns_wind
