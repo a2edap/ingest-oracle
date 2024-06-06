@@ -35,6 +35,7 @@ data_vars:
     dims: [time]
     dtype: float
     attrs:
+      standard_name: air_temperature
       long_name: Average corrected RASS temperature
       units: degC
 
