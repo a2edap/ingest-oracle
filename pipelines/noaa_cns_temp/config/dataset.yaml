@@ -1,6 +1,6 @@
 attrs:
   title: noaa_cns_temp
-  description: taking CNS temp data from ascii to netcdf
+  description: Taking data for Radar 915MHz CnsTemp from CA and converting it from ascii text to
   location_id: nps
   dataset_name: noaa_cns_temp
   data_level: b0
