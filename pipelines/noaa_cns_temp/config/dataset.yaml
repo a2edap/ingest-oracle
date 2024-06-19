@@ -1,0 +1,117 @@
+attrs:
+  title: noaa_cns_temp
+  description: Taking data for Radar 915MHz CnsTemp from CA and converting it from ascii text to
+  location_id: nps
+  dataset_name: noaa_cns_temp
+  data_level: b0
+
+coords:
+  time:
+    dims: [time]
+    dtype: datetime64[s]
+    attrs:
+      units: Seconds since 1970-01-01 00:00:00 UTC
+      standard_name: time
+      long_name: Time
+      timezone: UTC
+
+data_vars:
+  height:
+    dims: [time]
+    dtype: float
+    attrs:
+      long_name: Height above ground
+      standard_name: height
+      units: km
+
+  uncorrected_air_temperature:
+    dims: [time]
+    dtype: float
+    attrs:
+      long_name: Average uncorrected RASS temperature
+      units: degC
+
+  air_temperature:
+    dims: [time]
+    dtype: float
+    attrs:
+      standard_name: air_temperature
+      long_name: Average corrected RASS temperature
+      units: degC
+
+  vertical_wind:
+    dims: [time]
+    dtype: float
+    attrs:
+      long_name: Average vertical wind
+      units: m/s
+
+  number_of_records_average_uncorrected_RASS_temperature:
+    dims: [time]
+    dtype: float
+    attrs:
+      long_name: Number of records average uncorrected RASS temperature
+      units: "1"
+
+  number_of_records_average_corrected_RASS_temperature:
+    dims: [time]
+    dtype: float
+    attrs:
+      long_name: Number of records average corrected RASS temperature
+      units: "1"
+
+  number_of_records_average_vertical_wind:
+    dims: [time]
+    dtype: float
+    attrs:
+      long_name: Number of records average vertical wind
+      units: "1"
+
+  SNR_average_uncorrected_RASS_temperature:
+    dims: [time]
+    dtype: float32
+    attrs:
+      long_name: Signal-to-noise ratio average uncorrected RASS temperature
+      units: dB
+
+  SNR_average_corrected_RASS_temperature:
+    dims: [time]
+    dtype: float32
+    attrs:
+      long_name: Signal-to-noise ratio average corrected RASS temperature
+      units: dB
+
+  SNR_average_vertical_wind:
+    dims: [time]
+    dtype: float32
+    attrs:
+      long_name: Signal-to-noise ratio average vertical wind
+      units: dB
+
+  latitude:
+    data: 36.69
+    dims: []
+    dtype: float32
+    attrs:
+      long_name: North latitude
+      standard_name: latitude
+      comment: Recorded latitude at the instrument location
+      units: degree_N
+
+  longitude:
+    data: -121.76
+    dims: []
+    dtype: float32
+    attrs:
+      long_name: East longitude
+      standard_name: longitude
+      comment: Recorded longitude at the instrument location
+      units: degree_E
+
+  elevation:
+    data: 51
+    dims: []
+    dtype: float32
+    attrs:
+      long_name: Site elevation
+      units: m

@@ -1,0 +1,43 @@
+classname: tsdat.io.retrievers.DefaultRetriever
+readers:
+  .*:
+    classname: pipelines.noaa_cns_temp.readers.NOAATempReader
+
+coords:
+  time:
+    data_converters:
+      - classname: tsdat.io.converters.StringToDatetime
+        format: "%Y-%m-%d %H:%M:%S"
+        timezone: UTC
+    name: time
+
+data_vars:
+  height:
+    name: height
+
+  uncorrected_air_temperature:
+    name: mean_uncorrected_RASS_temperature
+
+  air_temperature:
+    name: mean_corrected_RASS_temperature
+
+  vertical_wind:
+    name: mean_vertical_wind
+
+  number_of_records_average_uncorrected_RASS_temperature:
+    name: number_of_records_mean_uncorrected_RASS_temperature
+
+  number_of_records_average_corrected_RASS_temperature:
+    name: number_of_records_mean_corrected_RASS_temperature
+
+  number_of_records_average_vertical_wind:
+    name: number_of_records_mean_vertical_wind
+
+  latitude:
+    name: latitude
+
+  longitude:
+    name: longitude
+
+  elevation:
+    name: elevation
