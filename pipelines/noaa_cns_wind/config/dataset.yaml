@@ -1,0 +1,141 @@
+attrs:
+  title: noaa_cns_wind
+  description:
+    Taking data for Radar 915MHz CnsWind from CA and converting it from ascii text to
+    netCDF
+  location_id: nps
+  dataset_name: noaa_cns_wind
+  data_level: b0
+
+coords:
+  time:
+    dims: [time]
+    dtype: datetime64[s]
+    attrs:
+      units: Seconds since 1970-01-01 00:00:00
+      standard_name: time
+      long_name: Time
+      timezone: UTC
+
+data_vars:
+  height:
+    dims: [time]
+    dtype: float32
+    attrs:
+      long_name: Height above ground
+      standard_name: height
+      units: km
+
+  wind_speed:
+    dims: [time]
+    dtype: float32
+    attrs:
+      long_name: Wind speed
+      standard_name: wind_speed
+      units: m/s
+
+  wind_direction:
+    dims: [time]
+    dtype: float32
+    attrs:
+      long_name: Wind direction
+      standard_name: wind_from_direction
+      units: degrees
+      comment: degrees from north
+
+  radial_velocity_beam_1:
+    dims: [time]
+    dtype: float32
+    attrs:
+      long_name: Radial Velocity for beam 1
+      standard_name: radial_sea_water_velocity_toward_instrument
+      units: m/s
+      comment: postive towards radar
+
+  radial_velocity_beam_2:
+    dims: [time]
+    dtype: float32
+    attrs:
+      long_name: Radial Velocity for beam 2
+      standard_name: radial_sea_water_velocity_toward_instrument
+      units: m/s
+      comment: postive towards radar
+
+  radial_velocity_beam_3:
+    dims: [time]
+    dtype: float32
+    attrs:
+      long_name: Radial Velocity for beam 3
+      standard_name: radial_sea_water_velocity_toward_instrument
+      units: m/s
+      comment: postive towards radar
+
+  number_of_records_in_mean_beam_1:
+    dims: [time]
+    dtype: int
+    attrs:
+      long_name: Number of records in mean for beam 1
+      units: "1"
+
+  number_of_records_in_mean_beam_2:
+    dims: [time]
+    dtype: int
+    attrs:
+      long_name: Number of records in mean for beam 2
+      units: "1"
+
+  number_of_records_in_mean_beam_3:
+    dims: [time]
+    dtype: int
+    attrs:
+      long_name: Number of records in mean for beam 3
+      units: "1"
+
+  SNR_beam_1:
+    dims: [time]
+    dtype: float32
+    attrs:
+      long_name: Signal-to-noise ratio for beam 1
+      units: dB
+
+  SNR_beam_2:
+    dims: [time]
+    dtype: float32
+    attrs:
+      long_name: Signal-to-noise ratio for beam 2
+      units: dB
+
+  SNR_beam_3:
+    dims: [time]
+    dtype: float32
+    attrs:
+      long_name: Signal-to-noise ratio for beam 3
+      units: dB
+
+  latitude:
+    data: 36.69
+    dims: []
+    dtype: float32
+    attrs:
+      long_name: North latitude
+      standard_name: latitude
+      comment: Recorded latitude at the instrument location
+      units: degree_N
+
+  longitude:
+    data: -121.76
+    dims: []
+    dtype: float32
+    attrs:
+      long_name: East longitude
+      standard_name: longitude
+      comment: Recorded longitude at the instrument location
+      units: degree_E
+
+  elevation:
+    data: 51
+    dims: []
+    dtype: float32
+    attrs:
+      long_name: Site elevation
+      units: m
