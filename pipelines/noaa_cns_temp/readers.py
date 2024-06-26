@@ -79,9 +79,9 @@ class NOAATempReader(DataReader):
                     MeanUncorrectedRASSTemp.append(float(data[1]))
                     MeanCorrectedRASSTemp.append(float(data[2]))
                     MeanVeriticalWind.append(float(data[3]))
-                    NumRecMeanUnCorrRASS.append(float(data[4]))
-                    NumRecMeanCorrRASS.append(float(data[5]))
-                    NumRecMeanVW.append(float(data[6]))
+                    NumRecMeanUnCorrRASS.append(int(data[4]))
+                    NumRecMeanCorrRASS.append(int(data[5]))
+                    NumRecMeanVW.append(int(data[6]))
                     SNRMeanUnCorrRASS.append(float(data[7]))
                     SNRMeanCorrRASS.append(float(data[8]))
                     SNRMeanVW.append(float(data[9]))
@@ -114,5 +114,5 @@ class NOAATempReader(DataReader):
 
         # create dataset
         ds = xr.Dataset(data_vars=data_vars, coords=coords)
-
+        ds = ds.where(ds != 999999.0, -9999)
         return ds
