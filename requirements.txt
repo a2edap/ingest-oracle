@@ -2,3 +2,7 @@ tsdat
 cmocean  
 notebook
 act-atmos
+netCDF4<=1.6.5
+numpy<=1.26.4
+numexpr<=2.10.0
+scipy<1.14.0

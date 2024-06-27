@@ -3,7 +3,7 @@ from pathlib import Path
 from tsdat import PipelineConfig, assert_close
 
 
-def test_noaa_weber_wuertz_wind_nps_pipeline():
+def test_noaa_csn_wind_nps_pipeline():
     config_path = Path("pipelines/noaa_cns_wind/config/pipeline.yaml")
     config = PipelineConfig.from_yaml(config_path)
     pipeline = config.instantiate_pipeline()

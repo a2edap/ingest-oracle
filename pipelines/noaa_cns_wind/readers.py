@@ -160,5 +160,5 @@ class CustomDataReader(DataReader):
 
         # create dataset
         ds = xr.Dataset(data_vars=data_vars, coords=coords, attrs=attrs)
-
+        ds = ds.where(ds != 999999.0, -9999)
         return ds
