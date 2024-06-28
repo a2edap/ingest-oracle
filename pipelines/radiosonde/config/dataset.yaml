@@ -1,0 +1,139 @@
+attrs:
+  title: Radiosonde
+  description: Taking data for Radiosonde data from CA OAKLAND/METROP. OAKLAND INT. and converting it from ascii text to nc.
+  dataset_name: nws 
+  location_id: oak
+  data_level: a0 
+
+coords:
+  time:
+    dims: [time]
+    dtype: datetime64[s]
+    attrs:
+      long_name: Time
+      standard_name: time
+      units: Seconds since 1970-01-01 00:00:00 UTC
+      timezone: UTC
+
+data_vars:
+  pressure_level_data_source:
+    dims: []
+    dtype: str
+    attrs:
+      long_name: Data source code for pressure levels in the sounding
+      units: "1"
+
+  non_pressure_level_data_source:
+    dims: []
+    dtype: str
+    attrs:
+      long_name: Data source code for non-pressure levels in the sounding
+      units: "1"
+
+  major_level_type:
+    dims: [time]
+    dtype: float32
+    attrs:
+      long_name: Major level type indicator
+      units: "1"
+
+  minor_level_type:
+    dims: [time]
+    dtype: int
+    attrs:
+      long_name: Minor level type indicator
+      units: "1"
+
+  pressure:
+    dims: [time]
+    dtype: int
+    attrs:
+      long_name: Pressure
+      standard_name: pressure
+      units: hPA
+
+  pressure_processing_flag:
+    dims: [time]
+    dtype: str
+    attrs:
+      long_name: Pressure Processing Flag
+      units: "1"
+
+  geopotential_height:
+    dims: [time]
+    dtype: int
+    attrs:
+      long_name: Geopotential Height
+      units: m
+
+  geopotential_height_processing_flag:
+    dims: [time]
+    dtype: str
+    attrs:
+      long_name: Geopotential Height Processing Flag
+      units: "1"
+
+  temperature:
+    dims: [time]
+    dtype: int
+    attrs:
+      long_name: Temperature
+      standard_name: temperature
+      units: degC
+
+  temperature_processing_flag:
+    dims: [time]
+    dtype: str
+    attrs:
+      long_name: Temperature Processing Flag
+      units: "1"
+
+  relative_humidity:
+    dims: [time]
+    dtype: int
+    attrs:
+      long_name: Relative Humidity
+      standard_name: relative_humidity
+      units: "%"
+
+  dewpoint_depression:
+    dims: [time]
+    dtype: int
+    attrs:
+      long_name: Dewpoint Depression
+      standard_name: dewpoint_depression
+      units: degC
+
+  wind_direction:
+    dims: [time]
+    dtype: int
+    attrs:
+      long_name: Wind Direction
+      standard_name: wind_direction
+      units: deg
+
+  wind_speed:
+    dims: []
+    dtype: int
+    attrs:
+      long_name: Wind Speed
+      standard_name: wind_speed
+      units: m/s
+
+  latitude:
+    dims: []
+    dtype: float32
+    attrs:
+      long_name: Latitude
+      standard_name: latitude
+      comment: Recorded latitude at the instrument location
+      units: "degN"
+
+  longitude:
+    dims: []
+    dtype: float32
+    attrs:
+      long_name: Longitude
+      standard_name: longitude
+      comment: Recorded longitude at the instrument location
+      units: "degE"

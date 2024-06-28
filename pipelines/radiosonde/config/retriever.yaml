@@ -1,0 +1,61 @@
+classname: tsdat.io.retrievers.DefaultRetriever
+readers:
+  .*:
+    classname: pipelines.radiosonde.readers.CustomDataReader
+
+coords:
+  time:
+    data_converters:
+      - classname: tsdat.io.converters.StringToDatetime
+        format: "%Y-%m-%d %H:%M:%S"
+        timezone: UTC
+    name: time
+
+data_vars:
+  pressure_level_data_source:
+    name: pressure_level_data_source
+
+  non_pressure_level_data_source:
+    name: non_pressure_level_data_source
+
+  latitude:
+    name: latitude
+  
+  longitude: 
+    name: longitude
+
+  major_level_type:
+    name: major_level_type
+
+  minor_level_type:
+    name: minor_level_type
+
+  pressure:
+    name: pressure
+
+  pressure_processing_flag:
+    name: pressure_processing_flag
+
+  geopotential_height:
+    name: geopotential_height
+
+  geopotential_height_processing_flag:
+    name: geopotential_height_processing_flag
+
+  temperature:
+    name: temperature
+
+  temperature_processing_flag:
+    name: temperature_processing_flag
+
+  relative_humidity:
+    name: relative_humidity
+
+  dewpoint_depression:
+    name: dewpoint_depression
+
+  wind_direction:
+    name: wind_direction
+
+  wind_speed:
+    name: wind_speed
