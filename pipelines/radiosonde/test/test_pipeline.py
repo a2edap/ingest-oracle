@@ -3,8 +3,6 @@ from pathlib import Path
 from tsdat import PipelineConfig, assert_close
 
 
-# DEVELOPER: Update paths to your configuration(s), test input(s), and expected test
-# results files.
 def test_radiosonde_pipeline():
     config_path = Path("pipelines/radiosonde/config/pipeline_USM00072293.yaml")
     config = PipelineConfig.from_yaml(config_path)
