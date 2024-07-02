@@ -12,9 +12,9 @@ def test_radiosonde_pipeline():
 
     test_file = "pipelines/radiosonde/test/data/input/USM00072293.2019.01.01"
     expected_file = (
-        "pipelines/ndbc/test/data/expected/abc.example.a1.20220424.000000.nc"
+        "pipelines/radiosonde/test/data/expected/oak.nws.b0.20190101.110000.nc"
     )
 
     dataset = pipeline.run([test_file])
-    # expected: xr.Dataset = xr.open_dataset(expected_file)  # type: ignore
-    # assert_close(dataset, expected, check_attrs=False)
+    expected: xr.Dataset = xr.open_dataset(expected_file)  # type: ignore
+    assert_close(dataset, expected, check_attrs=False)

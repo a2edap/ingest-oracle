@@ -8,10 +8,6 @@ retriever:
 
 dataset:
   path: pipelines/radiosonde/config/dataset.yaml
-  overrides:
-    /attrs/location_id: 78210
-    # /data_vars/latitude/data: 33.677 #need to ask
-    # /data_vars/longitude/data: -120.213 #need to ask
 
 quality:
   path: shared/quality.yaml

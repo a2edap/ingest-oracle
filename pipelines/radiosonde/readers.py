@@ -74,20 +74,24 @@ class CustomDataReader(DataReader):
             wind_speed.append(int(line[46:51]))
 
         time = []
+        last_datetime = start_datetime
+        use_last_datetime = False
         for etime in ETIME:
-            # Convert etime to total seconds
             total_seconds = int(etime)
             minutes = total_seconds // 100
             seconds = total_seconds % 100
-
-            # Create timedelta from minutes and seconds
             delta = timedelta(minutes=minutes, seconds=seconds)
 
-            # Calculate new datetime
-            new_datetime = start_datetime + delta
+            if total_seconds == 100:
+                use_last_datetime = True
 
-            # Convert to datetime64[s] and append
+            if use_last_datetime:
+                new_datetime = last_datetime + delta
+            else:
+                new_datetime = start_datetime + delta
+
             time.append(np.datetime64(new_datetime))
+            last_datetime = new_datetime
 
         data_vars = {
             "major_level_type": (["time"], major_level_type),
@@ -119,8 +123,3 @@ class CustomDataReader(DataReader):
         ds = xr.Dataset(data_vars=data_vars, coords=coords)
 
         return ds
-
-
-# converting time to seconds
-# time since launch (not epoch seconds)
-# var1 and var2
