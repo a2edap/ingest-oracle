@@ -20,8 +20,6 @@ class RadiosondeReader(DataReader):
 
         """
 
-    missing_values = ["MM", 9999, 999, 99]
-
     parameters: Parameters = Parameters()
 
     def read(self, input_key: str) -> Union[xr.Dataset, Dict[str, xr.Dataset]]:
@@ -30,8 +28,8 @@ class RadiosondeReader(DataReader):
         lineZero = f.readline()
         pressure_level_data_source = lineZero[37:45].strip()
         non_pressure_level_data_source = lineZero[46:54].strip()
-        Latitude = float(lineZero[55:62]) / 1000.0
-        Longitude = float(lineZero[63:71]) / 1000.0
+        Latitude = float(lineZero[55:62]) / 10000
+        Longitude = float(lineZero[63:71]) / 10000
         Year = int(lineZero[13:17])
         Month = int(lineZero[18:20])
         Day = int(lineZero[21:23])
@@ -62,16 +60,52 @@ class RadiosondeReader(DataReader):
             major_level_type.append(int(line[0]))
             minor_level_type.append(int(line[1:2]))
             ETIME.append(int(line[3:8]))
-            pressure.append(int(line[9:15]) / 100)
+            # -------
+            pressure_value = int(line[9:15])
+            if pressure_value != -9999:
+                pressure.append(pressure_value / 100)  # Convert to hPa
+            else:
+                pressure.append(pressure_value)
+            # -------
             pressure_processing_flag.append(line[15:16])
             geopotential_height.append(int(line[16:21]))
             geopotential_height_processing_flag.append(line[21:22])
-            temperature.append(int(line[22:27]))
+            # -------
+            temperature_value = int(line[22:27])
+            if temperature_value != -9999:
+                temperature.append(
+                    temperature_value / 10.0
+                )  # Convert to degrees Celsius
+            else:
+                temperature.append(temperature_value)
+            # -------
             temperature_processing_flag.append(line[27:28])
-            relative_humidity.append(int(line[28:33]))
-            dewpoint_depression.append(int(line[34:39]))
+            # -------
+            relative_humidity_value = int(line[28:33])
+            if relative_humidity_value != -9999:
+                relative_humidity.append(
+                    relative_humidity_value / 10.0
+                )  # Convert to percent
+            else:
+                relative_humidity.append(relative_humidity_value)
+            # -------
+            dewpoint_depression_value = int(line[34:39])
+            if dewpoint_depression_value != -9999:
+                dewpoint_depression.append(
+                    dewpoint_depression_value / 10.0
+                )  # Convert to degrees Celsius
+            else:
+                dewpoint_depression.append(dewpoint_depression_value)
+            # -------
             wind_direction.append(int(line[40:45]))
-            wind_speed.append(int(line[46:51]))
+            # -------
+            wind_speed_value = int(line[46:51])
+            if wind_speed_value != -9999:
+                wind_speed.append(
+                    wind_speed_value / 10.0
+                )  # Convert to meters per second
+            else:
+                wind_speed.append(wind_speed_value)
 
         time = []
         last_datetime = start_datetime

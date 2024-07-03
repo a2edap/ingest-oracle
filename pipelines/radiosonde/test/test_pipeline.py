@@ -3,14 +3,14 @@ from pathlib import Path
 from tsdat import PipelineConfig, assert_close
 
 
-def test_radiosonde_pipeline():
+def test_radiosonde_USM00072293_pipeline():
     config_path = Path("pipelines/radiosonde/config/pipeline_USM00072293.yaml")
     config = PipelineConfig.from_yaml(config_path)
     pipeline = config.instantiate_pipeline()
 
     test_file = "pipelines/radiosonde/test/data/input/USM00072293.2019.01.01"
     expected_file = (
-        "pipelines/radiosonde/test/data/expected/oak.radio.b0.20190101.110000.nc"
+        "pipelines/radiosonde/test/data/expected/nkx.radio.b0.20190101.110000.nc"
     )
 
     dataset = pipeline.run([test_file])

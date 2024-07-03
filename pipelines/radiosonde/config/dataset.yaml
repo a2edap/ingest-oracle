@@ -1,8 +1,8 @@
 attrs:
   title: Radiosonde
-  description: The measurements included are major and minor level types, elapsed time since launch, pressure, pressure flag, geopotential height, geopotential height flag, temperature, temperature flag, relative humidity, dewpoint depression, wind direction, and wind speed, along with respective quality assurance flags and missing value indicators.
+  description: Sounding data containing measurements from various locations in California.
   dataset_name: radio 
-  location_id: oak
+  location_id: nkx
   data_level: b0 
 
 coords:
