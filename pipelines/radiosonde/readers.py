@@ -10,7 +10,7 @@ import numpy as np
 from datetime import datetime, timedelta
 
 
-class CustomDataReader(DataReader):
+class RadiosondeReader(DataReader):
     class Parameters(BaseModel, extra=Extra.forbid):
         """If your CustomDataReader should take any additional arguments from the
         retriever configuration file, then those should be specified here.

@@ -1,7 +1,7 @@
 attrs:
   title: Radiosonde
-  description: Taking data for Radiosonde data from CA OAKLAND/METROP. OAKLAND INT. and converting it from ascii text to nc.
-  dataset_name: nws #not sure if this should be nws or radio
+  description: The measurements included are major and minor level types, elapsed time since launch, pressure, pressure flag, geopotential height, geopotential height flag, temperature, temperature flag, relative humidity, dewpoint depression, wind direction, and wind speed, along with respective quality assurance flags and missing value indicators.
+  dataset_name: radio 
   location_id: oak
   data_level: b0 
 
@@ -144,7 +144,7 @@ data_vars:
         -8888 = Value removed by IGRA quality assurance, but valid
                 data remain at the same level.
         -9999 = Value missing prior to quality assurance.
-      units: degC
+      units: degree_C
 
   temperature_processing_flag:
     dims: [time]
@@ -195,7 +195,7 @@ data_vars:
         -8888 = Value removed by IGRA quality assurance, but valid
                 data remain at the same level.
         -9999 = Value missing prior to quality assurance.
-      units: degC
+      units: degree_C
 
   wind_direction:
     dims: [time]
@@ -210,7 +210,7 @@ data_vars:
         -8888 = Value removed by IGRA quality assurance, but valid
                 data remain at the same level.
         -9999 = Value missing prior to quality assurance.
-      units: deg
+      units: degree
 
   wind_speed:
     dims: []
@@ -233,7 +233,7 @@ data_vars:
       long_name: Latitude
       standard_name: latitude
       comment: Recorded latitude at the instrument location
-      units: "degN"
+      units: "degree_N"
 
   longitude:
     dims: []
@@ -242,4 +242,4 @@ data_vars:
       long_name: Longitude
       standard_name: longitude
       comment: Recorded longitude at the instrument location
-      units: "degE"
+      units: "degree_E"

@@ -13,5 +13,3 @@ quality:
   path: shared/quality.yaml
 storage:
   path: shared/storage.yaml
-
-# output_file_name: NWS.radio.OAK.b0.YYYMMD.HHMMSS.nc
