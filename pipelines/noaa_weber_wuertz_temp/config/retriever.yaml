@@ -42,6 +42,15 @@ data_vars:
   number_of_records_average_vertical_wind:
     name: number_of_records_mean_vertical_wind
 
+  SNR_average_uncorrected_RASS_temperature:
+    name: SNR_mean_uncorrected_RASS_temperature
+  
+  SNR_average_corrected_RASS_temperature:
+    name: SNR_mean_corrected_RASS_temperature
+
+  SNR_average_vertical_wind:
+    name: SNR_mean_vertical_wind
+
   latitude:
     name: latitude
 

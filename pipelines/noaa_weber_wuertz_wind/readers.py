@@ -152,4 +152,7 @@ class CustomDataReader(DataReader):
         # create dataset
         ds = xr.Dataset(data_vars=data_vars, coords=coords, attrs=attrs)
 
+        for var_name in ds.data_vars:
+            ds[var_name] = ds[var_name].where(ds[var_name] != 999999.0, -9999)
+
         return ds
