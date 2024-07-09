@@ -2,7 +2,7 @@ attrs:
   title: Radiosonde
   description: Sounding data containing measurements from various locations in California.
   dataset_name: radio 
-  location_id: nkx
+  location_id: ""
   data_level: b0 
 
 coords:
