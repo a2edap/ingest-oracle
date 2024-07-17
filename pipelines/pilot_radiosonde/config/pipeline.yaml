@@ -1,0 +1,15 @@
+classname: pipelines.pilot_radiosonde.pipeline.PilotRadiosonde
+
+triggers:
+  - .*SMODE.*\.nc
+
+retriever:
+  path: pipelines/pilot_radiosonde/config/retriever.yaml
+
+dataset:
+  path: pipelines/pilot_radiosonde/config/dataset.yaml
+
+quality:
+  path: shared/quality.yaml
+storage:
+  path: shared/storage.yaml

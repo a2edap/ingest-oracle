@@ -1,0 +1,36 @@
+classname: tsdat.io.retrievers.DefaultRetriever
+readers:
+  .*:
+    classname: pipelines.pilot_radiosonde.readers.pilot_radiosonde
+
+coords:
+  time:
+    name: time
+
+data_vars:
+  longitude:
+    name: longitude
+  latitude:
+    name: latitude
+  altitude:
+    name: altitude
+  profile_number:
+    name: profile number
+  id:
+    name: id
+  air_temperature:
+    name: air_temp
+  dew_point_temperature:
+    name: dp_temp 
+  air_pressure:
+    name: air_press
+  relative_humidity:
+    name: rhumid
+  wind_speed:
+    name: wind_spd
+  wind_from_direction:
+    name: wind_dir
+  eastward_wind:
+    name: ewind 
+  northward_wind:
+    name: nwind 
