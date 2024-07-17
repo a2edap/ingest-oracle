@@ -9,8 +9,8 @@ def test_pilot_radiosonde_pipeline():
     pipeline = config.instantiate_pipeline()
 
     test_file = "pipelines/pilot_radiosonde/test/data/input/S-MODE_PFC_OC2108A_radiosonde_001.nc"
-    expected_file = "pipelines/pilot_radiosonde/test/data/expected/abc.example.a1.20220424.000000.nc"
+    expected_file = "pipelines/pilot_radiosonde/test/data/expected/cali.pilot_radiosonde.a1.20211021.160109.nc"
 
     dataset = pipeline.run([test_file])
-    # expected: xr.Dataset = xr.open_dataset(expected_file)
-    # assert_close(dataset, expected, check_attrs=False)
+    expected: xr.Dataset = xr.open_dataset(expected_file)
+    assert_close(dataset, expected, check_attrs=False)

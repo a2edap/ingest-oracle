@@ -1,8 +1,8 @@
 attrs:
   title: pilot_radiosonde
-  description: To be updated 
+  description: To be updated #to be updated
   location_id: cali #To be updated 
-  dataset_name: pilot_radiosonde
+  dataset_name: pilot_radiosonde #could change
   data_level: a1
 
 coords:
@@ -13,6 +13,11 @@ coords:
       units: Seconds since 1970-01-01 00:00:00
 
 data_vars:
+  id:
+    dims: []
+    dtype: float
+    attrs: 
+      units: "1"
   air_temperature:
     dims: [time]
     dtype: float
