@@ -1,0 +1,26 @@
+classname: tsdat.io.retrievers.DefaultRetriever
+readers:
+  .*:
+    classname: pipelines.iop_saildrone.readers.SaildroneReader
+    
+coords:
+  time:
+    name: time
+
+data_vars:
+  latitude:
+    name: gps_lat
+  longitude:
+    name: gps_lng
+  air_pressure:
+    name: baro_pressure_filtered
+  air_temperature:
+    name: air_temperature_filtered
+  relative_humidity:
+    name: relative_humidity_filtered
+  wind_from_direction:
+    name: wind_direction_world_filtered
+  wind_speed:
+    name: wind_speed_world_filtered
+  wind_speed_of_gust:
+    name: wind_gust_speed_filtered
