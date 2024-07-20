@@ -8,9 +8,11 @@ attrs:
 coords:
   time:
     dims: [time]
-    dtype: datetime64[s]
+    dtype: datetime64[ns]
     attrs:
-      units: Seconds since 1970-01-01 00:00:00
+      long_name: UTC time
+      standard_name: time
+      units: Seconds since 1970-01-01 00:00:00 UTC
 
 data_vars:
   id:
@@ -23,48 +25,56 @@ data_vars:
     dtype: float
     attrs:
       standard_name: air_temperature
+      long_name: Air Temperature
       units: degC
   dew_point_temperature:
     dims: [time]
     dtype: float
     attrs:
       standard_name: dew_point_temperature
+      long_name: Dew Point Temperature
       units: K
   air_pressure:
     dims: [time]
     dtype: float
     attrs:
-      long_name: Surface Air Pressure in mbar from a sensor on the lidar
+      standard_name: air_pressure
+      long_name: Air Pressure
       units: hPa
   relative_humidity:
     dims: [time]
     dtype: float
     attrs:
+      standard_name: relative_humidity
       long_name: Relative Humidity
       units: "%"
   wind_speed:
     dims: [time]
     dtype: float
     attrs:
-      description: "average wind speed (horizontal)"
+      standard_name: wind_speed
+      long_name: Wind Speed
       units: m/s
-  wind_direction:
+  wind_to_direction:
     dims: [time]
     dtype: float
     attrs:
-      long_name: Wind Direction
+      standard_name: wind_to_direction
+      long_name: Wind Direction (direction wind is coming from)
       units: degrees
   eastward_wind:
     dims: [time]
     dtype: float
     attrs:
       standard_name: eastward_wind
+      long_name: Eastward Wind Component
       units: m/s
   northward_wind:
     dims: [time]
     dtype: float
     attrs:
       standard_name: northward_wind
+      long_name: Northward Wind Component
       units: m/s
 
   latitude:

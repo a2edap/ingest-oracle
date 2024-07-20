@@ -28,7 +28,7 @@ data_vars:
     name: rhumid
   wind_speed:
     name: wind_spd
-  wind_direction:
+  wind_to_direction:
     name: wind_dir
   eastward_wind:
     name: ewind 
