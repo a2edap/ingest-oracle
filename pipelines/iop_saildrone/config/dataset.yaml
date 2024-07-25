@@ -37,40 +37,40 @@ data_vars:
     dtype: float
     attrs:
       standard_name: air_pressure
-      long_name: baro_pressure_filtered
+      long_name: Filtered Barometric Pressure
       units: hPa
   air_temperature:
     dims: [time]
     dtype: float
     attrs:
       standard_name: air_temperature
-      long_name: air_temperature_filtered
+      long_name: Filtered Air Temperature 
       units: degC
   relative_humidity:
     dims: [time]
     dtype: float
     attrs:
       standard_name: relative_humidity
-      long_name: relative_humidity_filtered
+      long_name: Filtered Relative Humidity 
       units: "%"
   wind_from_direction:
     dims: [time]
     dtype: float
     attrs:
       standard_name: wind_from_direction
-      long_name: wind_direction_world_filtered
+      long_name: Filtered Wind Direction 
       units: degrees
   wind_speed:
     dims: [time]
     dtype: float
     attrs:
       standard_name: wind_speed
-      long_name: wind_speed_world_filtered
+      long_name: Filtered Wind Speed 
       units: m/s
   wind_speed_of_gust:
     dims: [time]
     dtype: float
     attrs:
       standard_name: wind_speed_of_gust
-      long_name: wind_gust_speed_filtered
+      long_name: Filtered Wind Gust Speed 
       units: m/s
