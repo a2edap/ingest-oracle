@@ -55,12 +55,12 @@ data_vars:
       standard_name: wind_speed
       long_name: Wind Speed
       units: m/s
-  wind_to_direction:
+  wind_direction:
     dims: [time]
     dtype: float
     attrs:
-      standard_name: wind_to_direction
-      long_name: Wind Direction (direction wind is coming from)
+      standard_name: wind_from_direction
+      long_name: Wind Direction 
       units: degrees
   eastward_wind:
     dims: [time]
