@@ -1,0 +1,76 @@
+attrs:
+  title: iop_saildrone
+  description: to be updated
+  location_id: cali
+  dataset_name: iop_saildrone
+  data_level: a1
+
+coords:
+  time:
+    dims: [time]
+    dtype: datetime64[ns]
+    attrs:
+      long_name: UTC time
+      standard_name: time
+      units: Seconds since 1970-01-01 00:00:00 UTC
+
+
+data_vars:
+  latitude:
+    dims: [time]
+    dtype: float
+    attrs:
+      long_name: "North latitude"
+      standard_name: "latitude"
+      description: "Recorded lattitude at the instrument location"
+      units: degree_N
+  longitude:
+    dims: [time]
+    dtype: float
+    attrs:
+      long_name: "East longitude"
+      standard_name: "longitude"
+      description: "Recorded longitude at the instrument location"
+      units: degree_E
+  air_pressure:
+    dims: [time]
+    dtype: float
+    attrs:
+      standard_name: air_pressure
+      long_name: Filtered Barometric Pressure
+      units: hPa
+  air_temperature:
+    dims: [time]
+    dtype: float
+    attrs:
+      standard_name: air_temperature
+      long_name: Filtered Air Temperature 
+      units: degC
+  relative_humidity:
+    dims: [time]
+    dtype: float
+    attrs:
+      standard_name: relative_humidity
+      long_name: Filtered Relative Humidity 
+      units: "%"
+  wind_from_direction:
+    dims: [time]
+    dtype: float
+    attrs:
+      standard_name: wind_from_direction
+      long_name: Filtered Wind Direction 
+      units: degrees
+  wind_speed:
+    dims: [time]
+    dtype: float
+    attrs:
+      standard_name: wind_speed
+      long_name: Filtered Wind Speed 
+      units: m/s
+  wind_speed_of_gust:
+    dims: [time]
+    dtype: float
+    attrs:
+      standard_name: wind_speed_of_gust
+      long_name: Filtered Wind Gust Speed 
+      units: m/s

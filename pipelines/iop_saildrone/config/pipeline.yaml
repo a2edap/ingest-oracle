@@ -1,0 +1,15 @@
+classname: pipelines.iop_saildrone.pipeline.IopSaildrone
+
+triggers:
+  - .*_5min.*\.nc
+
+retriever:
+  path: pipelines/iop_saildrone/config/retriever.yaml
+
+dataset:
+  path: pipelines/iop_saildrone/config/dataset.yaml
+
+quality:
+  path: shared/quality.yaml
+storage:
+  path: shared/storage.yaml
