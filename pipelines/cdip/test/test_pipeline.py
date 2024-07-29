@@ -14,7 +14,6 @@ def test_cdip_pipeline_rt():
     expected_file = "pipelines/cdip/test/data/expected/cdip.201.c1.20230706.180000.nc"
 
     dataset = pipeline.run([test_file])
-    return dataset
     # expected: xr.Dataset = xr.open_dataset(expected_file)  # type: ignore
 
     # time = slice(np.datetime64("2023-08-01"), np.datetime64("2023-10-01"))
