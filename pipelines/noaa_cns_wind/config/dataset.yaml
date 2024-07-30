@@ -137,4 +137,5 @@ data_vars:
     dtype: float32
     attrs:
       long_name: Site elevation
+      standard_name: altitude
       units: m
