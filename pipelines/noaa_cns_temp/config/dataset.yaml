@@ -41,21 +41,21 @@ data_vars:
 
   number_of_records_average_uncorrected_RASS_temperature:
     dims: [time]
-    dtype: int
+    dtype: float
     attrs:
       long_name: Number of records average uncorrected RASS temperature
       units: "1"
 
   number_of_records_average_corrected_RASS_temperature:
     dims: [time]
-    dtype: int
+    dtype: float
     attrs:
       long_name: Number of records average corrected RASS temperature
       units: "1"
 
   number_of_records_average_vertical_wind:
     dims: [time]
-    dtype: int
+    dtype: float
     attrs:
       long_name: Number of records average vertical wind
       units: "1"
