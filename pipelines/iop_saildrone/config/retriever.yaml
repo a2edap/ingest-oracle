@@ -8,9 +8,9 @@ coords:
     name: time
 
 data_vars:
-  latitude:
+  gps_latitude:
     name: gps_lat
-  longitude:
+  gps_longitude:
     name: gps_lng
   air_pressure:
     name: baro_pressure_filtered
