@@ -1,8 +1,8 @@
 attrs:
-  title: iop_saildrone
-  description: to be updated
+  title: SMODE_IOP1_saildrone
+  description: S-Mode field campaign Salidrone observations during IOP1.
   location_id: cali
-  dataset_name: iop_saildrone
+  dataset_name: smode_l1_saildrones_v1
   data_level: a1
 
 coords:
@@ -14,17 +14,16 @@ coords:
       standard_name: time
       units: Seconds since 1970-01-01 00:00:00 UTC
 
-
 data_vars:
-  latitude:
+  gps_latitude:
     dims: [time]
     dtype: float
     attrs:
       long_name: "North latitude"
       standard_name: "latitude"
-      description: "Recorded lattitude at the instrument location"
+      description: "Recorded latitude at the instrument location"
       units: degree_N
-  longitude:
+  gps_longitude:
     dims: [time]
     dtype: float
     attrs:
@@ -59,7 +58,7 @@ data_vars:
     attrs:
       standard_name: wind_from_direction
       long_name: Filtered Wind Direction 
-      units: degrees
+      units: degree
   wind_speed:
     dims: [time]
     dtype: float
