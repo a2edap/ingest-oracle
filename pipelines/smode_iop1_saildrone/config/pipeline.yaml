@@ -1,0 +1,15 @@
+classname: pipelines.smode_iop1_saildrone.pipeline.SmodeIop1Radiosonde
+
+triggers:
+  - .*SMODE.*\.nc
+
+retriever:
+  path: pipelines/smode_iop1_saildrone/config/retriever.yaml
+
+dataset:
+  path: pipelines/smode_iop1_saildrone/config/dataset.yaml
+
+quality:
+  path: shared/quality.yaml
+storage:
+  path: shared/storage.yaml
