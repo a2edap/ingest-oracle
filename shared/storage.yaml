@@ -1,4 +1,7 @@
 classname: tsdat.io.storage.FileSystem
+parameters: 
+  data_filename_template: "{datastream}.{date_time}[.{qualifier}][.{temporal}].{extension}"
+
 handler:
   classname: tsdat.io.handlers.NetCDFHandler
   parameters:
