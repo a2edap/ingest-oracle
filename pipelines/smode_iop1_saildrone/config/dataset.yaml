@@ -1,10 +1,11 @@
 attrs:
   title: SMODE_iop1_saildrone
   description: S-Mode field campaign Salidrone observations during IOP1.
-  location_id: cali
-  dataset_name: smode_saildrones_v1
+  location_id: smode
+  dataset_name: saildrone_v1
+  z_id: z01
   data_level: a1
-  qualifier: 1062
+  drone_id: 1062
 
 coords:
   time:
@@ -22,478 +23,478 @@ coords:
 
 data_vars:
   longitude:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       long_name: "North latitude"
       standard_name: "latitude"
       units: degree_N
   latitude:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       long_name: "East longitude"
       standard_name: "longitude"
       units: degree_E
   SOG:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: platform_speed_wrt_ground
       long_name: Speed over ground
       units: m/s
   SOG_FILTERED_MEAN:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: platform_speed_wrt_ground
       long_name: Speed over ground one minute mean
       units: m/s
   SOG_FILTERED_STDDEV:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: platform_speed_wrt_ground
       long_name: Speed over ground one minute stddev
       units: m/s
   SOG_FILTERED_MAX:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: platform_speed_wrt_ground
       long_name: Speed over ground one minute max
       units: m/s
   SOG_FILTERED_MIN:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: platform_speed_wrt_ground
       long_name: Speed over ground one minute min
       units: m/s
   COG:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: platform_course
       long_name: Course over ground
       units: degree
   COG_FILTERED_MEAN:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: platform_course
       long_name: Course over ground one minute mean
       units: degree
   COG_FILTERED_STDDEV:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: platform_course
       long_name: Course over ground one minute stddev
       units: degree
   HDG:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: platform_yaw_angle
       long_name: Vehicle heading
       units: degree
   HDG_FILTERED_MEAN:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: platform_yaw_angle
       long_name: Vehicle heading one minute mean
       units: degree
   HDG_FILTERED_STDDEV:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: platform_yaw_angle
       long_name: Vehicle heading one minute stddev
       units: degree
   ROLL_FILTERED_MEAN:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: platform_roll_angle
       long_name: Vehicle roll one minute mean
       units: degree
   ROLL_FILTERED_STDDEV:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: platform_roll_angle
       long_name: Vehicle roll one minute stddev
       units: degree
   ROLL_FILTERED_PEAK:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: platform_roll_angle
       long_name: Vehicle roll one minute peak
       units: degree
   PITCH_FILTERED_MEAN:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: platform_pitch_angle
       long_name: Vehicle pitch one minute mean
       units: degree
   PITCH_FILTERED_STDDEV:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: platform_pitch_angle
       long_name: Vehicle pitch one minute stddev
       units: degree
   PITCH_FILTERED_PEAK:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: platform_pitch_angle
       long_name: Vehicle pitch one minute stddev
       units: degree
   HDG_WING:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       long_name: Wing heading
       units: degree
   WING_HDG_FILTERED_MEAN:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       long_name: Wing heading one minute mean
       units: degree
   WING_HDG_FILTERED_STDDEV:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       long_name: Wing heading one minute stddev
       units: degree
   WING_ROLL_FILTERED_MEAN:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       long_name: Wing roll one minute mean
       units: degree
   WING_ROLL_FILTERED_STDDEV:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       long_name: Wing roll one minute stddev
       units: degree
   WING_ROLL_FILTERED_PEAK:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       long_name: Wing roll one minute peak
       units: degree
   WING_PITCH_FILTERED_MEAN:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       long_name: Wing pitch one minute mean
       units: degree
   WING_PITCH_FILTERED_STDDEV:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       long_name: Wing pitch one minute stddev
       units: degree
   WING_PITCH_FILTERED_PEAK:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       long_name: Wing pitch one minute peak
       units: degree
   WING_ANGLE:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       long_name: Wing angle
       units: degree
   WIND_FROM_MEAN:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: wind_from_direction
       long_name:  Wind from mean
       units: degree
   WIND_FROM_STDDEV:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
-      long_name: Wind from SD
+      long_name: Wind from standard deviation
       units: degree
   WIND_SPEED_MEAN:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: wind_speed
       long_name: Wind Speed mean
       units: m/s
   WIND_SPEED_STDDEV:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       long_name: Wind speed SD
       units: m/s
   UWND_MEAN:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: eastward_wind
       long_name: Eastward wind speed mean
       units: m/s
   UWND_STDDEV:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       long_name: Eastward wind speed SD
       units: m/s
   VWND_MEAN:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: northward_wind
       long_name: Northward wind speed mean
       units: m/s
   VWND_STDDEV:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       long_name: Northward wind speed SD
       units: m/s
   WWND_MEAN:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: downward_air_velocity
       long_name: Downward wind speed mean
       units: m/s
   WWND_STDDEV:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       long_name: Downward wind speed SD
       units: m/s
   GUST_WND_MEAN:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: wind_speed_of_gust
       long_name: Wind gust speed mean
       units: m/s
   GUST_WND_STDDEV:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       long_name: Wind gust speed SD
       units: m/s
   WIND_MEASUREMENT_HEIGHT_MEAN:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       long_name: Wind measurement height
       units: m
   WIND_MEASUREMENT_HEIGHT_STDDEV:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       long_name: Wind measurement height SD
       units: m
   TEMP_AIR_MEAN:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: air_temperature
       long_name: Air temperature
       units: degC
   TEMP_AIR_STDDEV:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       long_name: Air temperature SD
       units: degC
   RH_MEAN:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: relative_humidity
       long_name: Relative humidity
       units: "%"
   RH_STDDEV:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       long_name: Relative humidity SD
       units: "%"
   BARO_PRES_MEAN:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: air_pressure
       long_name: Air pressure
       units: hPa
   BARO_PRES_STDDEV:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       long_name: Air pressure SD
-      units: HPa
+      units: hPa
   PAR_AIR_MEAN:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: surface_downwelling_photosynthetic_photon_flux_in_air
       long_name: Photosynthetically active radiation in air
       units: mol m-2 s-1
   PAR_AIR_STDDEV:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       long_name: Photosynthetically active radiation in air SD
       units: mol m-2 s-1
   TEMP_IR_SEA_WING_UNCOMP_MEAN:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: sea_surface_skin_temperature
       long_name: Wing Sea IR Temperature
       units: degC
   TEMP_IR_SEA_WING_UNCOMP_STDDEV:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       long_name: Wing Sea IR Temperature SD
       units: degC
   WAVE_DOMINANT_PERIOD:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: sea_surface_wave_period_at_variance_spectral_density_maximum
       long_name: Dominant wave period
       units: s
   WAVE_SIGNIFICANT_HEIGHT:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: sea_surface_wave_significant_height
       long_name: Significant wave height
       units: m
   TEMP_SBE37_MEAN:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: sea_water_temperature
       long_name: Seawater temperature
       units: degC
   TEMP_SBE37_STDDEV:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       long_name: Seawater temperature SD
       units: degC
   SAL_SBE37_MEAN:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: sea_water_practical_salinity
       long_name: Seawater salinity
       units: "1"
   SAL_SBE37_STDDEV:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       long_name: Seawater salinity SD
       units: "1"
   COND_SBE37_MEAN:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: sea_water_electrical_conductivity
       long_name: Seawater conductivity
       units: mS cm-1
   COND_SBE37_STDDEV:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       long_name: Seawater conductivity SD
       units: mS cm-1
   O2_CONC_SBE37_MEAN:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: mole_concentration_of_dissolved_molecular_oxygen_in_sea_water
       long_name: Oxygen concentration
       units: mol m-3
   O2_CONC_SBE37_STDDEV:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       long_name: Oxygen concentration SD
       units: micromol L-1
   O2_SAT_SBE37_MEAN:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: fractional_saturation_of_oxygen_in_sea_water
       long_name: Oxygen saturation
       units: "%"
   O2_SAT_SBE37_STDDEV:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       long_name: Oxygen saturation SD
       units: "%"
   CHLOR_WETLABS_MEAN:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: mass_concentration_of_chlorophyll_in_sea_water
       long_name: Chlorophyll concentration
       units: microgram L-1
   CHLOR_WETLABS_STDDEV:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       long_name: Chlorophyll concentration SD
       units: microgram L-1
   CDOM_MEAN:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       standard_name: concentration_of_colored_dissolved_organic_matter_in_sea_water_expressed_as_equivalent_mass_fraction_of_quinine_sulfate_dihydrate
       long_name: CDOM concentration
       units: "1"
   CDOM_STDDEV:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       long_name: CDOM concentration SD
       units: "1"
   BKSCT_RED_MEAN:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       long_name: Optical backscatter at 650 nm
       units: (m sr)-1
   BKSCT_RED_STDDEV:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       long_name: Optical backscatter at 650 nm SD
       units: (m sr)-1
   WATER_CURRENT_SPEED_MEAN:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       long_name: Water Current Speed
       units: m/s
   WATER_CURRENT_DIRECTION_MEAN:
-    dims: [trajectory, time]
+    dims: [time, trajectory]
     dtype: float
     attrs:
       long_name: Water Current Direction

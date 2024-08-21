@@ -19,4 +19,6 @@ class pilot_saildrone(DataReader):
         # Convert 'latitude' and 'longitude' from coordinates to data variables
         ds = ds.reset_coords(["latitude", "longitude"], drop=False)
 
+        ds = ds.transpose()
+
         return ds
