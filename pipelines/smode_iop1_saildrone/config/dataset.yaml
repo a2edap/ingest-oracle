@@ -1,11 +1,11 @@
 attrs:
   title: SMODE_iop1_saildrone
-  description: S-Mode field campaign Salidrone observations during IOP1.
+  description: S-Mode field campaign Saildrone observations during IOP1.
   location_id: smode
-  dataset_name: saildrone_v1
-  z_id: z01
+  dataset_name: saildrone1
+  z_id: "1075"
   data_level: a1
-  drone_id: 1062
+  qualifier: pilot
 
 coords:
   time:
