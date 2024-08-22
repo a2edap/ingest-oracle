@@ -10,7 +10,7 @@ def test_iop_saildrone_pipeline():
     pipeline = config.instantiate_pipeline()
 
     test_file = "pipelines/iop_saildrone/test/data/input/1026_5min.nc"
-    expected_file = "pipelines/iop_saildrone/test/data/expected/smode.saildrone_v1.z06.a1.20221006.071928.nc"
+    expected_file = "pipelines/iop_saildrone/test/data/expected/smode.saildrone1.1026.a1.20221006.071928.iop1.nc"
 
     dataset = pipeline.run([test_file])
     expected: xr.Dataset = xr.open_dataset(expected_file)  # type: ignore
