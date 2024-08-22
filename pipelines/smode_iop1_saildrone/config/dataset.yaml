@@ -3,7 +3,7 @@ attrs:
   description: S-Mode field campaign Saildrone observations during IOP1.
   location_id: smode
   dataset_name: saildrone1
-  z_id: "1075"
+  z_id: "1062"
   data_level: a1
   qualifier: pilot
 
