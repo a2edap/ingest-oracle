@@ -9,7 +9,7 @@ def test_smode_iop1_saildrone_pipeline():
     config = PipelineConfig.from_yaml(config_path)
     pipeline = config.instantiate_pipeline()
 
-    test_file = "pipelines/smode_iop1_saildrone/test/data/input/SMODE_PFC_saildrone_nonadcp_1062.nc"
+    test_file = "pipelines/smode_iop1_saildrone/test/data/input/subset_SMODE_PFC_saildrone_nonadcp_1062.nc"
     expected_file = "pipelines/smode_iop1_saildrone/test/data/expected/smode.saildrone1.1062.a1.20211024.000000.pilot.nc"
 
     dataset = pipeline.run([test_file])
