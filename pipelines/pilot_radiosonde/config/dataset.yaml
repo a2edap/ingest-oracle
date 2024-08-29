@@ -1,8 +1,9 @@
 attrs:
-  title: pilot_radiosonde
-  description: To be updated #to be updated
-  location_id: cali #To be updated 
-  dataset_name: pilot_radiosonde #could change
+  title: SMODE_iop1_Radiosonde
+  description: S-Mode field campaign Radiosonde observations during IOP1.
+  location_id: smode 
+  dataset_name: sonde
+  z_id: ship
   data_level: a1
 
 coords:
@@ -33,7 +34,7 @@ data_vars:
     attrs:
       standard_name: dew_point_temperature
       long_name: Dew Point Temperature
-      units: K
+      units: degC
   air_pressure:
     dims: [time]
     dtype: float
@@ -81,23 +82,23 @@ data_vars:
       dims: [time]
       dtype: float
       attrs:
-        long_name: "North latitude"
-        standard_name: "latitude"
-        description: "Recorded lattitude at the instrument location"
+        long_name: North latitude
+        standard_name: latitude
+        comment: Recorded latitude at the instrument location
         units: degree_N
   longitude:
     dims: [time]
     dtype: float
     attrs:
-      long_name: "East longitude"
-      standard_name: "longitude"
-      description: "Recorded longitude at the instrument location"
+      long_name: East longitude
+      standard_name: longitude
+      comment: Recorded longitude at the instrument location
       units: degree_E
   altitude:
     dims: [time]
     dtype: float
     attrs:
-      long_name: "Altitude"
-      standard_name: "altitude"
-      description: "Recorded altitude at the instrument location"
+      long_name: Altitude
+      standard_name: altitude
+      comment: Recorded altitude at the instrument location
       units: m
