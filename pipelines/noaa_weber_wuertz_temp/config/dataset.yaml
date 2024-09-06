@@ -26,13 +26,6 @@ data_vars:
       standard_name: height
       units: km
 
-  uncorrected_air_temperature:
-    dims: [time]
-    dtype: float
-    attrs:
-      long_name: Average uncorrected RASS temperature
-      units: degC
-
   air_temperature:
     dims: [time]
     dtype: float
@@ -44,6 +37,7 @@ data_vars:
     dims: [time]
     dtype: float
     attrs:
+      standard_name: upward_air_velocity
       long_name: Average vertical wind
       units: m/s
 
@@ -115,4 +109,5 @@ data_vars:
     dtype: float32
     attrs:
       long_name: Site elevation
+      standard_name: altitude
       units: m

@@ -36,6 +36,7 @@ data_vars:
     dims: [time]
     dtype: float
     attrs:
+      standard_name: upward_air_velocity
       long_name: Average vertical wind
       units: m/s
 

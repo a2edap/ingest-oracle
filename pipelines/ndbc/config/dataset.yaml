@@ -25,7 +25,7 @@ data_vars:
     attrs:
       long_name: Wind direction
       standard_name: wind_from_direction
-      units: degrees
+      units: degree
 
   wind_speed:
     dims: [time]
@@ -75,7 +75,7 @@ data_vars:
       standard_name: sea_surface_wave_from_direction
       comment:
         the direction from which the waves at the dominant period (DPD) are coming
-      units: degrees
+      units: degree
 
   sea_level_pressure:
     dims: [time]
